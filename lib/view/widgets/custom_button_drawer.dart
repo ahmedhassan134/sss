@@ -1,27 +1,33 @@
 import 'package:flutter/material.dart';
 
 import '../../service/responsive.dart';
+
+
+
 class  CustomGesterDetectorDrawer extends StatelessWidget {
-  CustomGesterDetectorDrawer({Key? key, required this.onTap,required this.text,required this.iconData}) : super(key: key);
-  Function()? onTap;
-  String text;
-  late IconData iconData;
+  const CustomGesterDetectorDrawer({Key? key, required this.onTap,required this.text,required this.iconData}) : super(key: key);
+  final Function()? onTap;
+  final String text;
+  final IconData iconData;
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return Container(
+      margin: EdgeInsets.symmetric(horizontal: SizeConfig.defaultSize*.2),
+      child: Row(
 
-      children: [
-        Expanded
+        children: [
+          Expanded
 
-          (child: Icon(iconData,size: 35,),flex: 1,),
-         SizedBox(width: SizeConfig.defaultSize* 2,),
-        Expanded(
-          child: GestureDetector(
-            onTap: onTap,
-            child: Text(text,style: const TextStyle(color: Colors.white,fontSize: 30,fontWeight: FontWeight.bold),),
-          ),flex: 3,
-        ),
-      ],
+            (child: Icon(iconData,size: SizeConfig.defaultSize* 3.5,color: Colors.black),flex: 1,),
+          SizedBox(width: SizeConfig.defaultSize* 2,),
+          Expanded(
+            child: GestureDetector(
+              onTap: onTap,
+              child: Text(text,style:  TextStyle(color: Colors.black,fontSize:SizeConfig.defaultSize* 2.4,fontWeight: FontWeight.bold),),
+            ),flex: 3,
+          ),
+        ],
+      ),
     );
   }
 }

@@ -113,7 +113,7 @@ class AboutTheApp extends StatelessWidget {
                           textDirection: TextDirection.rtl,
                           style: TextStyle(
                               fontSize: SizeConfig.defaultSize*1.4, fontWeight: FontWeight.w900,
-                            color: Colors.grey
+                            color: Colors.black
                           ),
 
                         ),

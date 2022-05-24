@@ -1,3 +1,4 @@
+import 'package:fares_pro/view/page_view.dart';
 import 'package:fares_pro/view/screens/Introduction%20to%20communication%20science/Introduction%20to%20communication%20science.dart';
 import 'package:fares_pro/view/screens/Introduction%20to%20communication%20science/design_a_plan_to_address_delayed_language_growth.dart';
 import 'package:fares_pro/view/screens/Introduction%20to%20communication%20science/diagnosis_of_delayed_language_growth.dart';
@@ -10,6 +11,8 @@ import 'package:fares_pro/view/screens/Introduction%20to%20communication%20scien
 import 'package:fares_pro/view/screens/Sound_disturbances/Sound_disturbances.dart';
 import 'package:fares_pro/view/screens/Sound_disturbances/widgets/default_screen.dart';
 import 'package:fares_pro/view/screens/Speech_and_pain_disorders/Speech_and_pain_disorders.dart';
+import 'package:fares_pro/view/screens/Speech_and_pain_disorders/speech/shape_of_spech.dart';
+import 'package:fares_pro/view/screens/Speech_and_pain_disorders/speech/special_of_speech.dart';
 import 'package:fares_pro/view/screens/advice/advice.dart';
 import 'package:fares_pro/view/screens/common_person/common_person.dart';
 import 'package:fares_pro/view/screens/common_questions.dart';
@@ -56,7 +59,7 @@ class MyApp extends StatelessWidget {
               titleTextStyle: TextStyle(fontSize: 24),
               elevation: 0)),
       debugShowCheckedModeBanner: false,
-      home: const HomeScreen(),
+      home: const PaageView(),
       routes: {
         HomeScreen.id: (context) => const HomeScreen(),
         AboutTheApp.id: (context) => const AboutTheApp(),
@@ -68,39 +71,40 @@ class MyApp extends StatelessWidget {
             const SpeechAndBreathingOrganExercises(),
         LanguageDisorders.id: (context) => const LanguageDisorders(),
         CommonQuestions.id: (context) => const CommonQuestions(),
-        Speeking.id: (context) => const Speeking(),
-        Sound.id: (context) => const Sound(),
-        LanguageAcquisition.id: (context) => const LanguageAcquisition(),
-        ReasonsForDelayedLanguageGrowth.id: (context) =>
-            const ReasonsForDelayedLanguageGrowth(),
+       // Speeking.id: (context) => const Speeking(),
+       // Sound.id: (context) => const Sound(),
+      //  LanguageAcquisition.id: (context) => const LanguageAcquisition(),
+      //  ReasonsForDelayedLanguageGrowth.id: (context) =>
+          //  const ReasonsForDelayedLanguageGrowth(),
         HiringTesting.id: (context) => HiringTesting(),
         LanguageTesting.id: (context) => LanguageTesting(),
-        DiagnosisOfDelayedLanguageGrowth.id: (context) =>
-            const DiagnosisOfDelayedLanguageGrowth(),
-        DesignAPlanToAddressDelayedLanguageGrowth.id: (context) =>
-            const DesignAPlanToAddressDelayedLanguageGrowth(),
+        ShapeOfSpeeche.id:(context)=>ShapeOfSpeeche(),
+        //DiagnosisOfDelayedLanguageGrowth.id: (context) =>
+       //     const DiagnosisOfDelayedLanguageGrowth(),
+       // DesignAPlanToAddressDelayedLanguageGrowth.id: (context) =>
+           // const DesignAPlanToAddressDelayedLanguageGrowth(),
         BreathingExcercise.id: (context) => const BreathingExcercise(),
         SpeekingExcercise.id: (context) => const SpeekingExcercise(),
         CommonPerson.id: (context) => const CommonPerson(),
         Advice.id: (context) => Advice(),
         CenterLanguageInDisorders.id: (context) =>
             const CenterLanguageInDisorders(),
-        MechanicSpeeking.id: (context) => const MechanicSpeeking(),
-        MechaniqueProduct.id: (context) => const MechaniqueProduct(),
+        //MechanicSpeeking.id: (context) => const MechanicSpeeking(),
+      //  MechaniqueProduct.id: (context) => const MechaniqueProduct(title: '',),
         ElaeeHomeScreen.id: (context) => const ElaeeHomeScreen(),
-        AssementOfBlindess.id: (context) => const AssementOfBlindess(),
-        CausesOfBlindess.id: (context) => const CausesOfBlindess(),
-        IntroductionOfBlindess.id: (context) => const IntroductionOfBlindess(),
-        ProblemWithBlindess.id: (context) => const ProblemWithBlindess(),
-        RehabilitionBlindess.id: (context) => const RehabilitionBlindess(),
-        TestOfBlindess.id: (context) => const TestOfBlindess(),
-        TypesOfBlindess.id: (context) => const TypesOfBlindess(),
-        CausesOfAbraxia.id: (context) => const CausesOfAbraxia(),
-        IntroductionOfAbraxia.id: (context) => const IntroductionOfAbraxia(),
-        InterventionMethodOfAbraxia.id: (context) =>
-            const InterventionMethodOfAbraxia(),
-        SymptomsOfAbraxia.id: (context) => const SymptomsOfAbraxia(),
-        TreatmentOfAbraxia.id: (context) => const TreatmentOfAbraxia(),
+       // AssementOfBlindess.id: (context) => const AssementOfBlindess(),
+       // CausesOfBlindess.id: (context) => const CausesOfBlindess(),
+       // IntroductionOfBlindess.id: (context) => const IntroductionOfBlindess(),
+       // ProblemWithBlindess.id: (context) => const ProblemWithBlindess(),
+       // RehabilitionBlindess.id: (context) => const RehabilitionBlindess(),
+       // TestOfBlindess.id: (context) => const TestOfBlindess(),
+      //  TypesOfBlindess.id: (context) => const TypesOfBlindess(),
+       // CausesOfAbraxia.id: (context) => const CausesOfAbraxia(),
+       // IntroductionOfAbraxia.id: (context) => const IntroductionOfAbraxia(),
+       // InterventionMethodOfAbraxia.id: (context) =>
+          //  const InterventionMethodOfAbraxia(),
+      //  SymptomsOfAbraxia.id: (context) => const SymptomsOfAbraxia(),
+      //  TreatmentOfAbraxia.id: (context) => const TreatmentOfAbraxia(),
         HomeOfAbraxia.id: (context) => const HomeOfAbraxia()
       },
     );

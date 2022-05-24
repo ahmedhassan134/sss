@@ -1,60 +1,102 @@
+import 'package:fares_pro/view/widgets/container_in_above.dart';
+import 'package:fares_pro/view/widgets/custom_stack.dart';
 import 'package:fares_pro/view/widgets/domain.dart';
-
+import 'package:fares_pro/view/widgets/rich_text_widget.dart';
 import 'package:fares_pro/view/widgets/subdomain.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_tts/flutter_tts.dart';
 
 import '../../../../../service/responsive.dart';
-import '../../../../widgets/container_in_above.dart';
-class InterventionMethodOfAbraxia extends StatelessWidget {
-  const InterventionMethodOfAbraxia({Key? key}) : super(key: key);
-  static String id=' InterventionMethodOfAbraxia';
+
+
+
+
+class InterventionMethodOfAbraxia extends StatefulWidget {
+  InterventionMethodOfAbraxia(
+      {Key? key,
+        required this.title,
+        this.titleImagePath,
+        required this.listOfRichTextWidget})
+      : super(key: key);
+  final String title;
+  String? titleImagePath;
+  final List<MapEntry<Domain, SubDomain>> listOfRichTextWidget;
+
+  @override
+  State<InterventionMethodOfAbraxia> createState() => _ReUseableScreenState();
+}
+
+class _ReUseableScreenState extends State<InterventionMethodOfAbraxia> {
+  FlutterTts flutterTts = FlutterTts();
+  bool isPlay = false;
+  @override
+  void dispose() {
+    flutterTts.stop();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            if (!isPlay) {
+              setState(() {
+                isPlay = true;
+              });
+              flutterTts.speak(widget.listOfRichTextWidget
+                  .map((e) => e.value.text)
+                  .toString());
+            } else {
+              setState(() {
+                isPlay = false;
+              });
+              flutterTts.stop();
+            }
+          },
+          child: Icon(isPlay ? Icons.pause : Icons.play_arrow)),
       backgroundColor: Colors.green.shade500,
-      appBar: AppBar(
+      appBar: widget.titleImagePath != null
+          ? AppBar(
+        title: Text(widget.title),
+      )
+          : AppBar(
+        iconTheme: IconThemeData(color: Colors.black),
         backgroundColor: Colors.white,
-        elevation: 0,
-        leading: IconButton(
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            icon: Icon(
-              Icons.arrow_back,
-              color: Colors.black,
-              size: SizeConfig.defaultSize * 3.3,
-            )),
+        elevation: 0.0,
       ),
-      body: Column(
+      body: Stack(
         children: [
-          const ContainerWithText(text: 'أساليب التدخل '),
-          SizedBox(height: SizeConfig.defaultSize*3,),
-          Expanded(
-            child: SingleChildScrollView(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: const [
-                  Domain(text: 'أساليب التدخل :'),
-                  Domain(text: ') أسلوب النشاط الحنجري ::'),
-                  SubDomain(text: '''-	يستخدم هذا الأسلوب في حالات صعوبة إصدار الأصوات
--	يتبادل المعالج والمريض وضع أيديهما على حنجرتيهما
--	يصدر المعالج الأصوات التالية ويحاول المريض تقليده
-'''),
-                  Domain(text: '۲) اسلوب نشاط اللسان :۔'),
-                  SubDomain(text: '''يجلس المريض والمعالج أمام مرأه ويبدأ المعالج في إصدار الأصوات التالية ويحاول المريض تقليده :
-- ا			-أو			- /اي
-يحاول المريض إصدار الصوت (م) بالاستعانة بكل المثيرات الحسية الممكنة ثم نضيف إليه بعض الأصوات بالتدريج حتى تكون مقاطع. يحاول المريض تحريك لسانه في الأصوات إلا لا لا
- محاولة نطق جميع الأصوات
-'''),
-
-
-                ],
-              ),
+          SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                widget.titleImagePath != null
+                    ? Stackk(
+                  img: widget.titleImagePath!,
+                )
+                    : ContainerWithText(
+                  text: widget.title,
+                ),
+                SizedBox(
+                  height: SizeConfig.defaultSize * 4,
+                ),
+                ListView.builder(
+                  physics: NeverScrollableScrollPhysics(),
+                  shrinkWrap: true,
+                  itemCount: widget.listOfRichTextWidget.length,
+                  itemBuilder: (context, index) {
+                    return Column(
+                      children: [
+                        widget.listOfRichTextWidget[index].key,
+                        widget.listOfRichTextWidget[index].value
+                      ],
+                    );
+                  },
+                ),
+              ],
             ),
-          )
+          ),
         ],
       ),
     );

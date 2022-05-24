@@ -77,36 +77,24 @@ class AppPresenter extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
 
-                    GestureDetector(
-                        onTap: ()async{
-
-                         await  _makePhoneCall('01122719189');
-                        },
-                        child: Container(
-                          padding: const EdgeInsets.all(8), // Border width
-                          decoration: const BoxDecoration(
-                              color: Colors.red, shape: BoxShape.circle),
-                          child: Stack(
-                            children: [
-                              ClipOval(
-                                child: SizedBox.fromSize(
-                                  size: Size.fromRadius(SizeConfig.defaultSize * 7),
-                                  // Image radius
-                                  child: Image.asset('assets/images/person/2.jpg',
-                                      fit: BoxFit.fill),
-                                ),
-                              ),
-                              Positioned(
-                                  top: SizeConfig.defaultSize * 7.5,
-                                  left: SizeConfig.defaultSize * 1,
-                                  child: Icon(
-                                    Icons.call,
-                                    color: Colors.green,
-                                    size: SizeConfig.defaultSize * 4,
-                                  ))
-                            ],
+                    Container(
+                      padding:  EdgeInsets.all(SizeConfig.defaultSize *1), // Border width
+                      decoration: const BoxDecoration(
+                           shape: BoxShape.circle),
+                      child: Stack(
+                        children: [
+                          ClipOval(
+                            child: SizedBox.fromSize(
+                              size: Size.fromRadius(SizeConfig.defaultSize * 7),
+                              // Image radius
+                              child: Image.asset('assets/images/person/2.jpg',
+                                  fit: BoxFit.fill),
+                            ),
                           ),
-                        )),
+
+                        ],
+                      ),
+                    ),
                   ],
                 ),
 
@@ -136,7 +124,7 @@ class AppPresenter extends StatelessWidget {
                                 size: Size.fromRadius(SizeConfig.defaultSize * 7),
                                 // Image radius
                                 child: Image.asset(presenterList[index].img,
-                                    fit: BoxFit.fill),
+                                    fit: BoxFit.cover),
                               ),
                             ),
                             flex: 3,
@@ -167,15 +155,5 @@ class AppPresenter extends StatelessWidget {
     );
   }
 
-   Future<void> _makePhoneCall(String phoneNumber) async {
-     // Use `Uri` to ensure that `phoneNumber` is properly URL-encoded.
-     // Just using 'tel:$phoneNumber' would create invalid URLs in some cases,
-     // such as spaces in the input, which would cause `launch` to fail on some
-     // platforms.
-     final Uri launchUri = Uri(
-       scheme: 'tel',
-       path: phoneNumber,
-     );
-     await launch(launchUri.toString());
-   }
+
 }

@@ -17,10 +17,10 @@ static String id='ss';
       body: Stack(
         children: [
           Image.asset(
-            'assets/images/four.jpg',
+            'assets/images/backtwo.jpg',
             width: double.infinity,
             height: double.infinity,
-            fit: BoxFit.cover,
+            fit: BoxFit.fill,
           ),
           SingleChildScrollView(
             child: Column(
@@ -28,13 +28,20 @@ static String id='ss';
 
 
                 StackCustom(s1:SizeConfig.defaultSize * 3,
+                    onPressed: (){
+                      Navigator.pushNamed(context, SpeekingExcercise.id);
+                    },
 
                     onTap: (){
                   Navigator.pushNamed(context, SpeekingExcercise.id);
                 }, text:'تدريبات أعضاء النطق ', img: 'assets/images/speeking_excer.jpg'),
 
 
-                StackCustom(onTap: (){
+                StackCustom(
+                    onPressed: (){
+                      Navigator.pushNamed(context, SpeekingExcercise.id);
+                    },onTap: (){
+
                   Navigator.pushNamed(context, BreathingExcercise.id);
                 }, text:'تدريبات التنفس ', img: 'assets/images/breathing_excer.jpg'),
 

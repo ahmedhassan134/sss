@@ -17,12 +17,12 @@ class BreathingExcercise extends StatelessWidget {
       ),
       body: Stack(
         children: [
-          Image.asset(
-            'assets/images/one.jpg',
-            width: double.infinity,
-            height: double.infinity,
-            fit: BoxFit.cover,
-          ),
+          // Image.asset(
+          //   'assets/images/one.jpg',
+          //   width: double.infinity,
+          //   height: double.infinity,
+          //   fit: BoxFit.cover,
+          // ),
           SingleChildScrollView(
             child: Padding(
               padding: EdgeInsets.all(SizeConfig.defaultSize * 1),

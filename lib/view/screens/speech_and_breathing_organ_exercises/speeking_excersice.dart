@@ -2,6 +2,8 @@ import 'package:fares_pro/service/responsive.dart';
 import 'package:fares_pro/view/widgets/column_with_common_question.dart';
 import 'package:flutter/material.dart';
 
+import '../../widgets/floating_youtube_button.dart';
+
 
 class SpeekingExcercise extends StatelessWidget {
   const SpeekingExcercise({Key? key}) : super(key: key);
@@ -167,6 +169,27 @@ class SpeekingExcercise extends StatelessWidget {
           ),
         ],
       ),
+      floatingActionButton: Container(
+        alignment: Alignment.bottomLeft,
+        padding: EdgeInsetsDirectional.only(start: SizeConfig.defaultSize *2,end: SizeConfig.defaultSize *.5,bottom:SizeConfig.defaultSize *.5,),
+        margin:EdgeInsetsDirectional.only(start: SizeConfig.defaultSize *2,end: SizeConfig.defaultSize *.5,bottom:SizeConfig.defaultSize *.5, ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children:  [
+
+            const FloatingWidget(
+              heroTag: 'one',
+              urll: 'https://youtu.be/e-2DkwMTDsc',
+            ),
+            SizedBox(height: SizeConfig.defaultSize *.9,),
+            const FloatingWidget(
+              heroTag: 'two',
+              urll: 'https://youtu.be/Jmh4b3piCg8',
+            ),
+          ],
+        ),
+      ),
     );
+
   }
 }

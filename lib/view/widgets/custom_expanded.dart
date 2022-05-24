@@ -22,7 +22,7 @@ class CustomExpanded extends StatelessWidget {
 
 
       alignment: Alignment.bottomRight,
-      width: SizeConfig.defaultSize * .25,
+      width: double.infinity,
       height: SizeConfig.defaultSize * 20,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(SizeConfig.defaultSize * 2),

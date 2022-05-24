@@ -88,12 +88,12 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           body: Stack(
             children: [
-              Image.asset(
-                'assets/images/four.jpg',
-                width: double.infinity,
-                height: double.infinity,
-                fit: BoxFit.cover,
-              ),
+              // Image.asset(
+              //   'assets/images/back.jpg',
+              //   width: double.infinity,
+              //   height: double.infinity,
+              //   fit: BoxFit.fill,
+              // ),
               SingleChildScrollView(
                 child: Padding(
                   padding: EdgeInsets.symmetric(

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 import '../../service/responsive.dart';
 class StackCustom extends StatelessWidget {
-  StackCustom ({Key? key, required this.onTap,required this.text,required this.img,this.s1,this.s2,this.clr}) : super(key: key);
+  StackCustom ({Key? key, required this.onPressed,required this.onTap,required this.text,required this.img,this.s1,this.s2,this.clr}) : super(key: key);
 
   Function()? onTap;
   String ? img;
@@ -11,6 +11,7 @@ class StackCustom extends StatelessWidget {
   double ? s1;
   double ? s2;
   Color ?clr;
+  Function()? onPressed;
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
@@ -47,12 +48,15 @@ class StackCustom extends StatelessWidget {
           child: FittedBox(
             child: Padding(
               padding:  EdgeInsetsDirectional.only(top: SizeConfig.defaultSize *3,end: SizeConfig.defaultSize *.6,start:  SizeConfig.defaultSize *1) ,
-              child: Text(
-                text!,
-                style:  TextStyle(
-                    fontSize: SizeConfig.defaultSize *3,
-                    fontWeight: FontWeight.bold,
-                    color: clr??Colors.black
+              child: TextButton(
+                onPressed: onPressed,
+                child: Text(
+                  text!,
+                  style:  TextStyle(
+                      fontSize: SizeConfig.defaultSize *3,
+                      fontWeight: FontWeight.bold,
+                      color: clr??Colors.black
+                  ),
                 ),
               ),
             ),

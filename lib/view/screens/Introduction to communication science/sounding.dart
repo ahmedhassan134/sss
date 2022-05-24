@@ -1,18 +1,69 @@
+import 'package:fares_pro/view/widgets/container_in_above.dart';
+import 'package:fares_pro/view/widgets/custom_stack.dart';
+import 'package:fares_pro/view/widgets/domain.dart';
+import 'package:fares_pro/view/widgets/rich_text_widget.dart';
+import 'package:fares_pro/view/widgets/subdomain.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_tts/flutter_tts.dart';
 
-import '../../../service/responsive.dart';
-import '../../widgets/custom_stack.dart';
-import '../../widgets/rich_text_widget.dart';
-class Sound extends StatelessWidget {
-  const Sound({Key? key}) : super(key: key);
-  static String id='sound';
+import '../../../../../service/responsive.dart';
+
+
+
+
+class Sound extends StatefulWidget {
+  Sound(
+      {Key? key,
+        required this.title,
+        this.titleImagePath,
+        required this.listOfRichTextWidget})
+      : super(key: key);
+  final String title;
+  String? titleImagePath;
+  final List<MapEntry<Domain, SubDomain>> listOfRichTextWidget;
+
+  @override
+  State<Sound> createState() => _ReUseableScreenState();
+}
+
+class _ReUseableScreenState extends State<Sound> {
+  FlutterTts flutterTts = FlutterTts();
+  bool isPlay = false;
+  @override
+  void dispose() {
+    flutterTts.stop();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('الصوت'),
-
+      floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            if (!isPlay) {
+              setState(() {
+                isPlay = true;
+              });
+              flutterTts.speak(widget.listOfRichTextWidget
+                  .map((e) => e.value.text)
+                  .toString());
+            } else {
+              setState(() {
+                isPlay = false;
+              });
+              flutterTts.stop();
+            }
+          },
+          child: Icon(isPlay ? Icons.pause : Icons.play_arrow)),
+      backgroundColor: Colors.deepPurple,
+      appBar: widget.titleImagePath != null
+          ? AppBar(
+        title: Text(widget.title),
+      )
+          : AppBar(
+        iconTheme: IconThemeData(color: Colors.black),
+        backgroundColor: Colors.white,
+        elevation: 0.0,
       ),
       body: Stack(
         children: [
@@ -20,17 +71,30 @@ class Sound extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                Stackk(
-                  img: 'assets/images/ch_one/sound.jpg',
+                widget.titleImagePath != null
+                    ? Stackk(
+                  img: widget.titleImagePath!,
+                )
+                    : ContainerWithText(
+                  text: widget.title,
                 ),
                 SizedBox(
                   height: SizeConfig.defaultSize * 4,
                 ),
-                const RichTextWidget(
-                    text1: 'الحنجرة: ',
-                    text2:'هي مصدر إنتاج الصوت يتشكل الصوت بها عندما يمر الهواء من خلالها أسفل الشفاه الصوتية  ( الاحبال الصوتية ) حيث تصدر الأنغام الصوتية عند مرور الهواء القادم من الرئتين والذي يحدث اهتزاز فيها يشكل موجات صوتية تتكون الشفاه الصوتية من عضلتين مشدودتين بأطرافهما من أعلى الحنجرة أشترك فيه إنتاج الصوت كل من الإنسان والحيوان.'),
-
-                 ],
+                ListView.builder(
+                  physics: NeverScrollableScrollPhysics(),
+                  shrinkWrap: true,
+                  itemCount: widget.listOfRichTextWidget.length,
+                  itemBuilder: (context, index) {
+                    return Column(
+                      children: [
+                        widget.listOfRichTextWidget[index].key,
+                        widget.listOfRichTextWidget[index].value
+                      ],
+                    );
+                  },
+                ),
+              ],
             ),
           ),
         ],

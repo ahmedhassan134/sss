@@ -7,6 +7,8 @@ import 'package:flutter/material.dart';
 
 import '../../../../../service/responsive.dart';
 import '../../../../widgets/custom_container_home_screen.dart';
+import '../../../../widgets/domain.dart';
+import '../../../../widgets/subdomain.dart';
 class HomeOfAbraxia extends StatelessWidget {
   const HomeOfAbraxia({Key? key}) : super(key: key);
   static String id='homeabrxia';
@@ -43,7 +45,19 @@ class HomeOfAbraxia extends StatelessWidget {
                     children: [
                       CustomContainerHomeScreen(
                         onTap: () {
-                          Navigator.pushNamed(context,  IntroductionOfAbraxia.id );
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) {
+                                return IntroductionOfAbraxia(
+                                  title: 'التعريف',
+                                  listOfRichTextWidget:  [
+                                    MapEntry(
+                                        Domain(text: 'التعريف:'),
+                                        SubDomain(clr: Colors.white,text: 'هي اضطراب في الجهاز الحركي المركزي يؤدي إلى فقدان التحكم الإرادي في وضع البرنامج الخاص بوضع أعضاء النطق على الرغم من فهم المطلوب.')
+                                    ),
+
+                                  ],
+                                );
+                              }));
                         },
                         text: '	التعريف',
                         clr1: Colors.red,
@@ -51,7 +65,19 @@ class HomeOfAbraxia extends StatelessWidget {
                       ),
                       CustomContainerHomeScreen(
                         onTap: () {
-                          Navigator.pushNamed(context,CausesOfAbraxia.id);
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) {
+                                return CausesOfAbraxia(
+                                  title: 'الاسباب',
+                                  listOfRichTextWidget:  [
+                                    MapEntry(
+                                        Domain(text: 'الأسباب:'),
+                                        SubDomain(clr: Colors.white,text: 'إصابة المناطق المصاحبة في المخ والتي تتحكم في شكل الحركة')),
+
+
+                                  ],
+                                );
+                              }));
                         },
                         text: '	الاسباب ',
                         clr1: Colors.red,
@@ -59,7 +85,20 @@ class HomeOfAbraxia extends StatelessWidget {
                       ),
                       CustomContainerHomeScreen(
                         onTap: () {
-                          Navigator.pushNamed(context,SymptomsOfAbraxia.id);
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) {
+                                return SymptomsOfAbraxia(
+                                  title: 'الاعراض  ',
+                                  listOfRichTextWidget:  [
+                                    MapEntry(
+                                    Domain(text: 'الأعراض:'),
+                                SubDomain(clr: Colors.white,text: '''لا يستطيع المريض تحويل الفكرة إلى عمل حركي لا يستطيع المريض أن يرتدي أو أن يخلع ملابسه بصورة منتظمة لا يستطيع أن يكون شكلا من مكونات الأساسية
+اضطراب حركة الفك واللسان والشفاه الإرادية غير الكلامية وعليه فلا يستطيع المريض أن يقلد حركة معينة أو أن يقوم بأداء حركة بعينها حينما يطلب منه ذلك.
+''')),
+
+                                  ],
+                                );
+                              }));
                         },
                         text: '	الاعراض',
                         clr1: Colors.blueAccent,
@@ -67,7 +106,21 @@ class HomeOfAbraxia extends StatelessWidget {
                       ),
                       CustomContainerHomeScreen(
                         onTap: () {
-                          Navigator.pushNamed(context,TreatmentOfAbraxia.id);
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) {
+                                return TreatmentOfAbraxia(
+                                  title: 'العلاج   ',
+                                  listOfRichTextWidget: [
+                                    MapEntry(
+                                    Domain(text: 'العلاج:'),
+                                SubDomain(clr: Colors.white,text: 'الهدف : مساعدة المريض لاسترجاع قدرته على التحكم الإرادي في وضع البرنامج الخاص بوضع أعضاء النطق في أماكنها أثناء الكلام لإصداره بشكل وترتيب صحيح.'),
+                                    ),
+                                MapEntry(
+                                Domain(text: 'ملاحظات: '),
+                                SubDomain(clr: Colors.white,text: 'مريض الأبراكسيا لا يحتاج لاستشارة لغوية كمريض العي . أن ما يحتاجه مريض الأبراكسيا هو تعليمه كيفية نطق الأصوات وترتيبها . يمكن الإستعانة بكل المثيرات الحسية الممكنة ( سمعية بصرية . لمسية) اعط المريض المنير مرة واحدة ثم أطلب منه أن يحاول تقليده عدة مرات')
+                                ),                                ],
+                                );
+                              }));
                         },
                         text: '	العلاج ',
                         clr1: Colors.grey,
@@ -75,7 +128,31 @@ class HomeOfAbraxia extends StatelessWidget {
                       ),
                       CustomContainerHomeScreen(
                         onTap: () {
-                          Navigator.pushNamed(context, InterventionMethodOfAbraxia.id);
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) {
+                                return InterventionMethodOfAbraxia(
+                                  title: 'أساليب التدخل  ',
+                                  listOfRichTextWidget: [
+                                    MapEntry(
+                                      Domain(text: 'أساليب التدخل :'),
+                                      SubDomain(clr: Colors.white,text: '')
+                                    ),
+                                    MapEntry(
+                                Domain(text: '1) أسلوب النشاط الحنجري '),
+                                SubDomain(clr: Colors.white,text: '''-	يستخدم هذا الأسلوب في حالات صعوبة إصدار الأصوات
+-	يتبادل المعالج والمريض وضع أيديهما على حنجرتيهما
+-	يصدر المعالج الأصوات التالية ويحاول المريض تقليده
+'''),),
+                                    MapEntry(
+                                Domain(text: '۲) اسلوب نشاط اللسان :'),
+                                SubDomain(clr: Colors.white,text: '''يجلس المريض والمعالج أمام مرأه ويبدأ المعالج في إصدار الأصوات التالية ويحاول المريض تقليده :
+- ا			-أو			- /اي
+يحاول المريض إصدار الصوت (م) بالاستعانة بكل المثيرات الحسية الممكنة ثم نضيف إليه بعض الأصوات بالتدريج حتى تكون مقاطع. يحاول المريض تحريك لسانه في الأصوات إلا لا لا
+ محاولة نطق جميع الأصوات
+'''),),
+                                  ],
+                                );
+                              }));
                         },
                         text: 'أساليب التدخل ',
                         clr1: Colors.orange,

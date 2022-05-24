@@ -1,55 +1,102 @@
+import 'package:fares_pro/view/widgets/container_in_above.dart';
+import 'package:fares_pro/view/widgets/custom_stack.dart';
+import 'package:fares_pro/view/widgets/domain.dart';
+import 'package:fares_pro/view/widgets/rich_text_widget.dart';
+import 'package:fares_pro/view/widgets/subdomain.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_tts/flutter_tts.dart';
 
 import '../../../../../service/responsive.dart';
-import '../../../../widgets/container_in_above.dart';
-import '../../../../widgets/domain.dart';
-import '../../../../widgets/subdomain.dart';
-class IntroductionOfBlindess extends StatelessWidget {
-  const IntroductionOfBlindess({Key? key}) : super(key: key);
-  static String id='IntroductionOfBlindess';
+
+
+
+
+class IntroductionOfBlindess extends StatefulWidget {
+  IntroductionOfBlindess(
+      {Key? key,
+        required this.title,
+        this.titleImagePath,
+        required this.listOfRichTextWidget})
+      : super(key: key);
+  final String title;
+  String? titleImagePath;
+  final List<MapEntry<Domain, SubDomain>> listOfRichTextWidget;
+
+  @override
+  State<IntroductionOfBlindess> createState() => _ReUseableScreenState();
+}
+
+class _ReUseableScreenState extends State<IntroductionOfBlindess> {
+  FlutterTts flutterTts = FlutterTts();
+  bool isPlay = false;
+  @override
+  void dispose() {
+    flutterTts.stop();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            if (!isPlay) {
+              setState(() {
+                isPlay = true;
+              });
+              flutterTts.speak(widget.listOfRichTextWidget
+                  .map((e) => e.value.text)
+                  .toString());
+            } else {
+              setState(() {
+                isPlay = false;
+              });
+              flutterTts.stop();
+            }
+          },
+          child: Icon(isPlay ? Icons.pause : Icons.play_arrow)),
       backgroundColor: Colors.green.shade500,
-      appBar: AppBar(
+      appBar: widget.titleImagePath != null
+          ? AppBar(
+        title: Text(widget.title),
+      )
+          : AppBar(
+        iconTheme: IconThemeData(color: Colors.black),
         backgroundColor: Colors.white,
-        elevation: 0,
-        leading: IconButton(
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            icon: Icon(
-              Icons.arrow_back,
-              color: Colors.black,
-              size: SizeConfig.defaultSize * 3.3,
-            )),
+        elevation: 0.0,
       ),
-      body: Column(
+      body: Stack(
         children: [
-          const ContainerWithText(text: 'تعريف العي  '),
-          SizedBox(height: SizeConfig.defaultSize*3,),
-          Expanded(
-            child: SingleChildScrollView(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: const [
-                  Domain(text: 'مشاكل اللغة (العي)'),
-                  SubDomain(text: '''-	اللغة هي أفكار الكلام المنطوق أو المكتوب وتنمو اللغة في خلال السنوات الأولي من العمر
-ويكتمل نموها في سن الثامنة أو العاشرة.
--	وقد تتدهور اللغة بعد اكتمال نموها، نتيجة إصابات المخ المتعددة والتي قد تؤثر في المراكز المسئولة عن فهم الإشارات الحسية أو السمعية أو البصرية أو المراكز المسئولة عن الأداء الحركي لإصدار الكلام
-
-'''),
-                  Domain(text: ' و يمكن تعريف تدهور اللغة العي: '),
-                  SubDomain(text: '''بأنه قصور مكتسب في اللغة نتيجة إصابة عضوية بالمخ وقد تظهر الأعراض في:
-١- تغير في القدرة على فهم الكلام المنطوق أو المكتوب (بالنسبة للمتعلمين) أو محتوى معني الجمل.
-۲- عدم القدرة على إصدار الكلام المنطوق أو المكتوب لغويا ونحوياً، أو صعوبة في نطق الكلام المراد التعبير عنه والرد بكلمات أخرى ليس لها معني
-''')
-                ],
-              ),
+          SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                widget.titleImagePath != null
+                    ? Stackk(
+                  img: widget.titleImagePath!,
+                )
+                    : ContainerWithText(
+                  text: widget.title,
+                ),
+                SizedBox(
+                  height: SizeConfig.defaultSize * 4,
+                ),
+                ListView.builder(
+                  physics: NeverScrollableScrollPhysics(),
+                  shrinkWrap: true,
+                  itemCount: widget.listOfRichTextWidget.length,
+                  itemBuilder: (context, index) {
+                    return Column(
+                      children: [
+                        widget.listOfRichTextWidget[index].key,
+                        widget.listOfRichTextWidget[index].value
+                      ],
+                    );
+                  },
+                ),
+              ],
             ),
-          )
+          ),
         ],
       ),
     );

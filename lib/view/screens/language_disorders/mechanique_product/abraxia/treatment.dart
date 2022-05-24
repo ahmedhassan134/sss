@@ -1,49 +1,102 @@
+import 'package:fares_pro/view/widgets/container_in_above.dart';
+import 'package:fares_pro/view/widgets/custom_stack.dart';
 import 'package:fares_pro/view/widgets/domain.dart';
+import 'package:fares_pro/view/widgets/rich_text_widget.dart';
 import 'package:fares_pro/view/widgets/subdomain.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_tts/flutter_tts.dart';
 
 import '../../../../../service/responsive.dart';
-import '../../../../widgets/container_in_above.dart';
-class TreatmentOfAbraxia extends StatelessWidget {
-  const TreatmentOfAbraxia({Key? key}) : super(key: key);
-  static String id='TreatmentOfAbraxia';
+
+
+
+
+class TreatmentOfAbraxia extends StatefulWidget {
+  TreatmentOfAbraxia(
+      {Key? key,
+        required this.title,
+        this.titleImagePath,
+        required this.listOfRichTextWidget})
+      : super(key: key);
+  final String title;
+  String? titleImagePath;
+  final List<MapEntry<Domain, SubDomain>> listOfRichTextWidget;
+
+  @override
+  State<TreatmentOfAbraxia> createState() => _ReUseableScreenState();
+}
+
+class _ReUseableScreenState extends State<TreatmentOfAbraxia> {
+  FlutterTts flutterTts = FlutterTts();
+  bool isPlay = false;
+  @override
+  void dispose() {
+    flutterTts.stop();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            if (!isPlay) {
+              setState(() {
+                isPlay = true;
+              });
+              flutterTts.speak(widget.listOfRichTextWidget
+                  .map((e) => e.value.text)
+                  .toString());
+            } else {
+              setState(() {
+                isPlay = false;
+              });
+              flutterTts.stop();
+            }
+          },
+          child: Icon(isPlay ? Icons.pause : Icons.play_arrow)),
       backgroundColor: Colors.green.shade500,
-      appBar: AppBar(
+      appBar: widget.titleImagePath != null
+          ? AppBar(
+        title: Text(widget.title),
+      )
+          : AppBar(
+        iconTheme: IconThemeData(color: Colors.black),
         backgroundColor: Colors.white,
-        elevation: 0,
-        leading: IconButton(
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            icon: Icon(
-              Icons.arrow_back,
-              color: Colors.black,
-              size: SizeConfig.defaultSize * 3.3,
-            )),
+        elevation: 0.0,
       ),
-      body: Column(
+      body: Stack(
         children: [
-          const ContainerWithText(text: 'العلاج '),
-          SizedBox(height: SizeConfig.defaultSize*3,),
-          Expanded(
-            child: SingleChildScrollView(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: const [
-                  Domain(text: 'العلاج:'),
-                  SubDomain(text: 'الهدف : مساعدة المريض لاسترجاع قدرته على التحكم الإرادي في وضع البرنامج الخاص بوضع أعضاء النطق في أماكنها أثناء الكلام لإصداره بشكل وترتيب صحيح.'),
-                  Domain(text: 'ملاحظات: '),
-                  SubDomain(text: 'مريض الأبراكسيا لا يحتاج لاستشارة لغوية كمريض العي . أن ما يحتاجه مريض الأبراكسيا هو تعليمه كيفية نطق الأصوات وترتيبها . يمكن الإستعانة بكل المثيرات الحسية الممكنة ( سمعية بصرية . لمسية) اعط المريض المنير مرة واحدة ثم أطلب منه أن يحاول تقليده عدة مرات')
-
-                ],
-              ),
+          SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                widget.titleImagePath != null
+                    ? Stackk(
+                  img: widget.titleImagePath!,
+                )
+                    : ContainerWithText(
+                  text: widget.title,
+                ),
+                SizedBox(
+                  height: SizeConfig.defaultSize * 4,
+                ),
+                ListView.builder(
+                  physics: NeverScrollableScrollPhysics(),
+                  shrinkWrap: true,
+                  itemCount: widget.listOfRichTextWidget.length,
+                  itemBuilder: (context, index) {
+                    return Column(
+                      children: [
+                        widget.listOfRichTextWidget[index].key,
+                        widget.listOfRichTextWidget[index].value
+                      ],
+                    );
+                  },
+                ),
+              ],
             ),
-          )
+          ),
         ],
       ),
     );

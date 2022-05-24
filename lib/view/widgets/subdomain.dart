@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 
 import '../../service/responsive.dart';
 class SubDomain extends StatelessWidget {
-  const SubDomain({Key? key,required this.text}) : super(key: key);
+   SubDomain({Key? key,required this.text,required this.clr}) : super(key: key);
 final String text;
+ final Color clr;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -16,7 +17,7 @@ final String text;
         alignment: Alignment.topRight,
         child:Text(text,
 
-          style: TextStyle(color: Colors.white,
+          style: TextStyle(color: clr,
               fontSize: SizeConfig.defaultSize*2,
               fontWeight: FontWeight.bold
           ),
