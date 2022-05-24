@@ -3,11 +3,8 @@ import 'package:fares_pro/service/responsive.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class AppPresenter extends StatelessWidget {
-   const AppPresenter({Key? key}) : super(key: key);
-
-
-
+class AmrAppPresenter extends StatelessWidget {
+  const AmrAppPresenter({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -34,11 +31,7 @@ class AppPresenter extends StatelessWidget {
             height: MediaQuery.of(context).size.height * .9,
             decoration: BoxDecoration(
               gradient: const LinearGradient(
-                colors: [
-                  Colors.tealAccent,
-                  Colors.deepPurple
-                ]
-              ),
+                  colors: [Colors.tealAccent, Colors.deepPurple]),
               borderRadius: BorderRadius.circular(16),
             ),
             child: Column(
@@ -49,7 +42,8 @@ class AppPresenter extends StatelessWidget {
                     // Expanded(child: Image.asset('assets/images/bns.png')),
                     CircleAvatar(
                       radius: SizeConfig.defaultSize * 3,
-                      backgroundImage: const AssetImage('assets/images/bns.png'),
+                      backgroundImage:
+                          const AssetImage('assets/images/bns.png'),
                     ),
                     SizedBox(
                       width: SizeConfig.defaultSize * 1,
@@ -57,7 +51,8 @@ class AppPresenter extends StatelessWidget {
                     const Expanded(
                       child: Text(
                         'كليه علوم ذوي الاحتياجات الخاصه جامعه بني سويف ',
-                        style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                        style: TextStyle(
+                            fontSize: 16, fontWeight: FontWeight.bold),
                         textAlign: TextAlign.center,
                       ),
                     ),
@@ -66,7 +61,8 @@ class AppPresenter extends StatelessWidget {
                     ),
                     CircleAvatar(
                       radius: SizeConfig.defaultSize * 3,
-                      backgroundImage: const AssetImage('assets/images/bns2.jfif'),
+                      backgroundImage:
+                          const AssetImage('assets/images/bns2.jfif'),
                     ),
                   ],
                 ),
@@ -76,72 +72,50 @@ class AppPresenter extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-
-                    Container(
-                      padding:  EdgeInsets.all(SizeConfig.defaultSize *1), // Border width
-                      decoration: const BoxDecoration(
-                           shape: BoxShape.circle),
-                      child: Stack(
-                        children: [
-                          ClipOval(
-                            child: SizedBox.fromSize(
-                              size: Size.fromRadius(SizeConfig.defaultSize * 7),
-                              // Image radius
-                              child: Image.asset('assets/images/person/2.jpg',
-                                  fit: BoxFit.fill),
-                            ),
+                    GestureDetector(
+                        onTap: () async {
+                          await _makePhoneCall('01122719189');
+                        },
+                        child: Container(
+                          padding: const EdgeInsets.all(8), // Border width
+                          decoration: const BoxDecoration(
+                              color: Colors.red, shape: BoxShape.circle),
+                          child: Stack(
+                            children: [
+                              ClipOval(
+                                child: SizedBox.fromSize(
+                                  size: Size.fromRadius(
+                                      SizeConfig.defaultSize * 7),
+                                  // Image radius
+                                  child: Image.asset(
+                                      'assets/images/person/2.jpg',
+                                      fit: BoxFit.fill),
+                                ),
+                              ),
+                              Positioned(
+                                  top: SizeConfig.defaultSize * 7.5,
+                                  left: SizeConfig.defaultSize * 1,
+                                  child: Icon(
+                                    Icons.call,
+                                    color: Colors.green,
+                                    size: SizeConfig.defaultSize * 4,
+                                  ))
+                            ],
                           ),
-
-                        ],
-                      ),
-                    ),
+                        )),
                   ],
                 ),
-
-
                 Expanded(
                   child: GridView.builder(
                     itemCount: presenterList.length,
                     // shrinkWrap: true,
                     // physics: const NeverScrollableScrollPhysics(),
-
-                    gridDelegate:  const SliverGridDelegateWithMaxCrossAxisExtent(
-                      childAspectRatio: .8,
-                      crossAxisSpacing: 6,
-                      mainAxisSpacing: 8,
-                      maxCrossAxisExtent: 200,
-
-                    ),
+                    gridDelegate:
+                        const SliverGridDelegateWithFixedCrossAxisCount(
+                            crossAxisCount: 2),
                     itemBuilder: (context, index) {
-                      return Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-
-                          Expanded(
-
-                            child:   ClipOval(
-                              child: SizedBox.fromSize(
-                                size: Size.fromRadius(SizeConfig.defaultSize * 7),
-                                // Image radius
-                                child: Image.asset(presenterList[index].img,
-                                    fit: BoxFit.cover),
-                              ),
-                            ),
-                            flex: 3,
-                          ),
-                          SizedBox(
-                            height: SizeConfig.defaultSize * 1,
-                          ),
-
-                          Expanded(
-                            child: Text(
-                              presenterList[index].text,
-                              style: const TextStyle(
-                                  fontSize: 16, fontWeight: FontWeight.bold),
-                            ),
-                            flex: 1,
-                          ),
-                        ],
+                      return AppPresenterItem(
+                        index: index,
                       );
                     },
                     // itemCount: facultyList.length,
@@ -155,5 +129,63 @@ class AppPresenter extends StatelessWidget {
     );
   }
 
+  Future<void> _makePhoneCall(String phoneNumber) async {
+    // Use `Uri` to ensure that `phoneNumber` is properly URL-encoded.
+    // Just using 'tel:$phoneNumber' would create invalid URLs in some cases,
+    // such as spaces in the input, which would cause `launch` to fail on some
+    // platforms.
+    final Uri launchUri = Uri(
+      scheme: 'tel',
+      path: phoneNumber,
+    );
+    await launch(launchUri.toString());
+  }
+}
 
+class AppPresenterItem extends StatelessWidget {
+  const AppPresenterItem({Key? key, required this.index}) : super(key: key);
+  final int index;
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.all(5),
+      padding: EdgeInsets.only(top: 5),
+      decoration: BoxDecoration(
+          border: Border.all(width: 1, color: Colors.purple),
+          borderRadius: BorderRadius.circular(15)),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Expanded(
+            child: CircleAvatar(
+              backgroundColor: Colors.white,
+              radius: SizeConfig.defaultSize * 7,
+              child: ClipOval(
+                child: SizedBox.fromSize(
+                  size: Size.fromRadius(SizeConfig.defaultSize * 6.0),
+                  // Image radius
+                  child: Image.asset(
+                    presenterList[index].img,
+                    fit: BoxFit.fitWidth,
+                    alignment: Alignment.topCenter,
+                  ),
+                ),
+              ),
+            ),
+            flex: 3,
+          ),
+          SizedBox(
+            height: SizeConfig.defaultSize * 1,
+          ),
+          Expanded(
+            child: Text(
+              presenterList[index].text,
+              style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+            ),
+            flex: 1,
+          ),
+        ],
+      ),
+    );
+  }
 }
