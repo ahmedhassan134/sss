@@ -27,7 +27,10 @@ class DrawerWidget extends StatelessWidget {
           ),
           SingleChildScrollView(
             child: Container(
-              padding:  EdgeInsetsDirectional.only(start:SizeConfig.defaultSize * .7,end:SizeConfig.defaultSize * .7, ),
+              padding: EdgeInsetsDirectional.only(
+                start: SizeConfig.defaultSize * .7,
+                end: SizeConfig.defaultSize * .7,
+              ),
               alignment: Alignment.topLeft,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -37,7 +40,8 @@ class DrawerWidget extends StatelessWidget {
                   ),
                   CircleAvatar(
                     radius: SizeConfig.defaultSize * 6,
-                    backgroundImage: const AssetImage('assets/images/background.jpg'),// Image radius
+                    backgroundImage: const AssetImage(
+                        'assets/images/background.jpg'), // Image radius
                   ),
                   SizedBox(
                     height: SizeConfig.defaultSize * 1,
@@ -50,15 +54,15 @@ class DrawerWidget extends StatelessWidget {
                         color: Colors.black),
                   ),
                   SizedBox(
-                    height: SizeConfig.defaultSize *5,
+                    height: SizeConfig.defaultSize * 5,
                   ),
                   CustomGesterDetectorDrawer(
                       iconData: Icons.home,
                       onTap: () {
                         Navigator.pushReplacement(context,
                             MaterialPageRoute(builder: (BuildContext context) {
-                              return const HomeScreen();
-                            }));
+                          return const HomeScreen();
+                        }));
                       },
                       text: 'الصفحه الرئيسيه'),
                   CustomGesterDetectorDrawer(
@@ -66,8 +70,8 @@ class DrawerWidget extends StatelessWidget {
                       onTap: () {
                         Navigator.push(context,
                             MaterialPageRoute(builder: (BuildContext context) {
-                              return const AboutTheFaculty();
-                            }));
+                          return const AboutTheFaculty();
+                        }));
                       },
                       text: ' نبذة عن الكلية '),
                   CustomGesterDetectorDrawer(
@@ -75,8 +79,8 @@ class DrawerWidget extends StatelessWidget {
                       onTap: () {
                         Navigator.push(context,
                             MaterialPageRoute(builder: (BuildContext context) {
-                              return const AppPresenter();
-                            }));
+                          return AmrAppPresenter();
+                        }));
                       },
                       text: 'مقدمي البرنامج '),
                   CustomGesterDetectorDrawer(
@@ -86,18 +90,19 @@ class DrawerWidget extends StatelessWidget {
                       },
                       text: ' نبذة عن التطبيق  '),
                   Container(
-                    margin: EdgeInsetsDirectional.only(start: SizeConfig.defaultSize*.2,end: SizeConfig.defaultSize*.6 ),
+                    margin: EdgeInsetsDirectional.only(
+                        start: SizeConfig.defaultSize * .2,
+                        end: SizeConfig.defaultSize * .6),
                     child: Row(
                       children: [
                         Expanded(
-
                           child: IconButton(
                             onPressed: () async {
                               final Uri params = Uri(
                                 scheme: 'mailto',
                                 path: 'Emandiab048@gmail.com',
                                 query:
-                                'subject=دليك في التخاطب ', //add subject and body here
+                                    'subject=دليك في التخاطب ', //add subject and body here
                               );
 
                               var url = params.toString();
@@ -111,7 +116,8 @@ class DrawerWidget extends StatelessWidget {
                               Icons.outgoing_mail,
                               size: SizeConfig.defaultSize * 3.5,
                               color: Colors.black,
-                            ),),
+                            ),
+                          ),
                           flex: 1,
                         ),
                         Expanded(
@@ -121,7 +127,7 @@ class DrawerWidget extends StatelessWidget {
                                 scheme: 'mailto',
                                 path: 'Emandiab048@gmail.com',
                                 query:
-                                'subject=دليك في التخاطب ', //add subject and body here
+                                    'subject=دليك في التخاطب ', //add subject and body here
                               );
 
                               var url = params.toString();
@@ -151,8 +157,8 @@ class DrawerWidget extends StatelessWidget {
                       onTap: () {
                         Navigator.push(context,
                             MaterialPageRoute(builder: (BuildContext context) {
-                              return const SourcesAndReferences1();
-                            }));
+                          return const SourcesAndReferences1();
+                        }));
                       },
                       text: '  المصادر والمراجع '),
                   CustomGesterDetectorDrawer(
