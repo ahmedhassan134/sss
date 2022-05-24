@@ -69,40 +69,33 @@ class AmrAppPresenter extends StatelessWidget {
                 SizedBox(
                   height: SizeConfig.defaultSize * 3,
                 ),
-                Row(
+                Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    GestureDetector(
-                        onTap: () async {
-                          await _makePhoneCall('01122719189');
-                        },
-                        child: Container(
-                          padding: const EdgeInsets.all(8), // Border width
-                          decoration: const BoxDecoration(
-                              color: Colors.red, shape: BoxShape.circle),
-                          child: Stack(
-                            children: [
-                              ClipOval(
-                                child: SizedBox.fromSize(
-                                  size: Size.fromRadius(
-                                      SizeConfig.defaultSize * 7),
-                                  // Image radius
-                                  child: Image.asset(
-                                      'assets/images/person/2.jpg',
-                                      fit: BoxFit.fill),
-                                ),
-                              ),
-                              Positioned(
-                                  top: SizeConfig.defaultSize * 7.5,
-                                  left: SizeConfig.defaultSize * 1,
-                                  child: Icon(
-                                    Icons.call,
-                                    color: Colors.green,
-                                    size: SizeConfig.defaultSize * 4,
-                                  ))
-                            ],
+                    Container(
+                      padding: const EdgeInsets.all(8), // Border width
+                      decoration: const BoxDecoration(
+                         shape: BoxShape.circle),
+                      child: Stack(
+                        children: [
+                          ClipOval(
+                            child: SizedBox.fromSize(
+                              size: Size.fromRadius(
+                                  SizeConfig.defaultSize * 7),
+                              // Image radius
+                              child: Image.asset(
+                                  'assets/images/person/2.jpg',
+                                  fit: BoxFit.fill),
+                            ),
                           ),
-                        )),
+
+                        ],
+                      ),
+                    ),
+                    const Text(
+                      'فارس هاني ابراهيم',
+                      style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                    ),
                   ],
                 ),
                 Expanded(

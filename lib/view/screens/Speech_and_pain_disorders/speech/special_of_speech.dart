@@ -9,7 +9,7 @@ class ShapeOfSpeeche extends StatelessWidget {
 
 
   final pdfPinchController = PdfControllerPinch(
-    document: PdfDocument.openAsset('assets/pdf/speech_pdf.pdf'),
+    document: PdfDocument.openAsset('assets/pdf/pd1.pdf'),
   );
 
 // Pdf view with re-render pdf texture on zoom (not loose quality on zoom)

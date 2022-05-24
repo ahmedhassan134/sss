@@ -25,7 +25,7 @@ class CommonPerson extends StatelessWidget {
           children: [
             Container(
               decoration: const BoxDecoration(
-                  gradient: LinearGradient(colors: [Colors.cyan, Colors.pink])),
+                  gradient: LinearGradient(colors: [Colors.cyan, Colors.pink],),),
             ),
             Padding(
               padding: EdgeInsets.symmetric(
@@ -35,6 +35,8 @@ class CommonPerson extends StatelessWidget {
               child: ListView.builder(
                 itemBuilder: (context, index) {
                   return IntroductionToCommunicationScienceButton(
+                    img: commonList[index].img,
+
                       clr: Colors.teal,
                       onTap: () {
                         Navigator.push(context, MaterialPageRoute(builder: (_) {

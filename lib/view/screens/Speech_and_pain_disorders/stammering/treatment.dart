@@ -3,10 +3,12 @@ import 'package:fares_pro/view/widgets/custom_stack.dart';
 import 'package:fares_pro/view/widgets/domain.dart';
 import 'package:fares_pro/view/widgets/rich_text_widget.dart';
 import 'package:fares_pro/view/widgets/subdomain.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 
 import '../../../../../service/responsive.dart';
+import '../../../widgets/floating_youtube_button.dart';
 
 
 
@@ -38,23 +40,71 @@ class _ReUseableScreenState extends State<TreatmentOfStamming> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: FloatingActionButton(
-          onPressed: () {
-            if (!isPlay) {
-              setState(() {
-                isPlay = true;
-              });
-              flutterTts.speak(widget.listOfRichTextWidget
-                  .map((e) => e.value.text)
-                  .toString());
-            } else {
-              setState(() {
-                isPlay = false;
-              });
-              flutterTts.stop();
-            }
-          },
-          child: Icon(isPlay ? Icons.pause : Icons.play_arrow)),
+      floatingActionButton: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.end,
+        children: [
+          Column(
+            mainAxisAlignment: MainAxisAlignment.end,
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: [
+              Container(
+                alignment: Alignment.bottomLeft,
+                padding: EdgeInsetsDirectional.only(start: SizeConfig.defaultSize *2,end: SizeConfig.defaultSize *.5,bottom:SizeConfig.defaultSize *.5,),
+                margin:EdgeInsetsDirectional.only(start: SizeConfig.defaultSize *2,end: SizeConfig.defaultSize *.5,bottom:SizeConfig.defaultSize *.5, ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children:  [
+
+                    const FloatingWidget(
+                      heroTag: 'one',
+                      urll: 'https://youtu.be/cSvTmMREqpU',
+                    ),
+                    SizedBox(height: SizeConfig.defaultSize *.9,),
+
+                  ],
+                ),
+              ),
+              Container(
+                alignment: Alignment.bottomLeft,
+                padding: EdgeInsetsDirectional.only(start: SizeConfig.defaultSize *2,end: SizeConfig.defaultSize *.5,bottom:SizeConfig.defaultSize *.5,),
+                margin:EdgeInsetsDirectional.only(start: SizeConfig.defaultSize *2,end: SizeConfig.defaultSize *.5,bottom:SizeConfig.defaultSize *.5, ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children:  [
+
+                    const FloatingWidget(
+                      heroTag: 'one',
+                      urll: 'https://youtu.be/PyNvIECIqv0',
+                    ),
+                    SizedBox(height: SizeConfig.defaultSize *.9,),
+
+                  ],
+                ),
+              ),
+
+            ],
+
+          ),
+          FloatingActionButton(
+              onPressed: () {
+                if (!isPlay) {
+                  setState(() {
+                    isPlay = true;
+                  });
+                  flutterTts.speak(widget.listOfRichTextWidget
+                      .map((e) => e.value.text)
+                      .toString());
+                } else {
+                  setState(() {
+                    isPlay = false;
+                  });
+                  flutterTts.stop();
+                }
+              },
+              child: Icon(isPlay ? Icons.pause : Icons.play_arrow)),
+        ],
+      ),
       backgroundColor: Colors.deepPurple,
       appBar: widget.titleImagePath != null
           ? AppBar(

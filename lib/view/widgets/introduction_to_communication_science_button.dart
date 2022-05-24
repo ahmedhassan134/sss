@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 
 import '../../service/responsive.dart';
 class IntroductionToCommunicationScienceButton extends StatelessWidget {
-  const IntroductionToCommunicationScienceButton({Key? key,required this.clr,required this.onTap,required this.text}) : super(key: key);
+  IntroductionToCommunicationScienceButton({Key? key,this.img,required this.clr,required this.onTap,required this.text}) : super(key: key);
   final Function() onTap;
   final String text;
   final Color clr;
+  String ? img;
+
 
   @override
   Widget build(BuildContext context) {
@@ -27,13 +29,19 @@ class IntroductionToCommunicationScienceButton extends StatelessWidget {
                   blurRadius: SizeConfig.defaultSize*1
               )
             ],
+            image: DecorationImage(
+              image: AssetImage(img!,
+              ),
+              fit: BoxFit.fill
+            )
 
 
           ),
           child: Center(
             child: FittedBox(
               child: Text
-                (text,style:  TextStyle(fontSize: SizeConfig.defaultSize*2.2,fontWeight: FontWeight.bold,color: Colors.white),),
+                (text,style:  TextStyle(fontSize: SizeConfig.defaultSize*2.2,fontWeight: FontWeight.bold,color: Colors.white),
+              ),
             ),
           ),
 

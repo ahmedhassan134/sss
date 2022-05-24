@@ -9,7 +9,7 @@ class ReasonsOfKnaf extends StatelessWidget {
 
 
   final pdfPinchController = PdfControllerPinch(
-    document: PdfDocument.openAsset('assets/pdf/reason_of_knaf.pdf'),
+    document: PdfDocument.openAsset('assets/pdf/pd2.pdf'),
   );
 
 // Pdf view with re-render pdf texture on zoom (not loose quality on zoom)
