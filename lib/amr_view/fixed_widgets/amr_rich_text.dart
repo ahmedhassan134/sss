@@ -28,9 +28,9 @@ class AmrRichText extends StatelessWidget {
         textAlign: TextAlign.end,
         text: TextSpan(
           text: text1,
-          locale: Locale('ar', 'EG'),
+          locale: const Locale('ar', 'EG'),
           style: TextStyle(
-            locale: Locale('ar', 'EG'),
+            locale: const Locale('ar', 'EG'),
             color: Colors.red,
             fontSize: SizeConfig.defaultSize * 2.4,
             fontWeight: FontWeight.bold,

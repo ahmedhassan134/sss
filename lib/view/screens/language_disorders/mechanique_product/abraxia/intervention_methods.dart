@@ -1,7 +1,7 @@
 import 'package:fares_pro/view/widgets/container_in_above.dart';
 import 'package:fares_pro/view/widgets/custom_stack.dart';
 import 'package:fares_pro/view/widgets/domain.dart';
-import 'package:fares_pro/view/widgets/rich_text_widget.dart';
+
 import 'package:fares_pro/view/widgets/subdomain.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_tts/flutter_tts.dart';
@@ -12,14 +12,14 @@ import '../../../../../service/responsive.dart';
 
 
 class InterventionMethodOfAbraxia extends StatefulWidget {
-  InterventionMethodOfAbraxia(
+  const InterventionMethodOfAbraxia(
       {Key? key,
         required this.title,
         this.titleImagePath,
         required this.listOfRichTextWidget})
       : super(key: key);
   final String title;
-  String? titleImagePath;
+  final String? titleImagePath;
   final List<MapEntry<Domain, SubDomain>> listOfRichTextWidget;
 
   @override
@@ -61,7 +61,7 @@ class _ReUseableScreenState extends State<InterventionMethodOfAbraxia> {
         title: Text(widget.title),
       )
           : AppBar(
-        iconTheme: IconThemeData(color: Colors.black),
+        iconTheme: const IconThemeData(color: Colors.black),
         backgroundColor: Colors.white,
         elevation: 0.0,
       ),
@@ -82,7 +82,7 @@ class _ReUseableScreenState extends State<InterventionMethodOfAbraxia> {
                   height: SizeConfig.defaultSize * 4,
                 ),
                 ListView.builder(
-                  physics: NeverScrollableScrollPhysics(),
+                  physics: const NeverScrollableScrollPhysics(),
                   shrinkWrap: true,
                   itemCount: widget.listOfRichTextWidget.length,
                   itemBuilder: (context, index) {

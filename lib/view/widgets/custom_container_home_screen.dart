@@ -41,14 +41,17 @@ class CustomContainerHomeScreen extends StatelessWidget {
               gradient: LinearGradient(colors: [clr1, clr2])),
           child: Center(
             child: FittedBox(
-              child: Text(
-                text,
-                style: TextStyle(
-                  fontSize: SizeConfig.defaultSize * 2.2,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white,
+              child: Padding(
+                padding:  EdgeInsetsDirectional.only(end: SizeConfig.defaultSize *1,start:SizeConfig.defaultSize *.3 ),
+                child: Text(
+                  text,
+                  style: TextStyle(
+                    fontSize: SizeConfig.defaultSize * 2.2,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
+                  overflow: TextOverflow.ellipsis
                 ),
-                overflow: TextOverflow.ellipsis
               ),
             ),
           ),

@@ -69,32 +69,66 @@ class AmrAppPresenter extends StatelessWidget {
                 SizedBox(
                   height: SizeConfig.defaultSize * 3,
                 ),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    Container(
-                      padding: const EdgeInsets.all(8), // Border width
-                      decoration: const BoxDecoration(
-                         shape: BoxShape.circle),
-                      child: Stack(
-                        children: [
-                          ClipOval(
-                            child: SizedBox.fromSize(
-                              size: Size.fromRadius(
-                                  SizeConfig.defaultSize * 7),
-                              // Image radius
-                              child: Image.asset(
-                                  'assets/images/person/2.jpg',
-                                  fit: BoxFit.fill),
-                            ),
-                          ),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Container(
+                          padding: const EdgeInsets.all(8), // Border width
+                          decoration: const BoxDecoration(
+                             shape: BoxShape.circle),
+                          child: Stack(
+                            children: [
+                              ClipOval(
+                                child: SizedBox.fromSize(
+                                  size: Size.fromRadius(
+                                      SizeConfig.defaultSize * 7),
+                                  // Image radius
+                                  child: Image.asset(
+                                      'assets/images/person/2.jpg',
+                                      fit: BoxFit.fill),
+                                ),
+                              ),
 
-                        ],
-                      ),
+                            ],
+                          ),
+                        ),
+                        const Text(
+                          'فارس هاني ابراهيم',
+                          style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                        ),
+                      ],
                     ),
-                    const Text(
-                      'فارس هاني ابراهيم',
-                      style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Container(
+                          padding: const EdgeInsets.all(8), // Border width
+                          decoration: const BoxDecoration(
+                              shape: BoxShape.circle),
+                          child: Stack(
+                            children: [
+                              ClipOval(
+                                child: SizedBox.fromSize(
+                                  size: Size.fromRadius(
+                                      SizeConfig.defaultSize * 7),
+                                  // Image radius
+                                  child: Image.asset(
+                                      'assets/images/app_presenter_stuff/islam.jpg',
+                                      fit: BoxFit.fill),
+                                ),
+                              ),
+
+                            ],
+                          ),
+                        ),
+                        const Text(
+                          'اسلام محمد شحاته',
+                          style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                        ),
+                      ],
                     ),
                   ],
                 ),
@@ -122,17 +156,6 @@ class AmrAppPresenter extends StatelessWidget {
     );
   }
 
-  Future<void> _makePhoneCall(String phoneNumber) async {
-    // Use `Uri` to ensure that `phoneNumber` is properly URL-encoded.
-    // Just using 'tel:$phoneNumber' would create invalid URLs in some cases,
-    // such as spaces in the input, which would cause `launch` to fail on some
-    // platforms.
-    final Uri launchUri = Uri(
-      scheme: 'tel',
-      path: phoneNumber,
-    );
-    await launch(launchUri.toString());
-  }
 }
 
 class AppPresenterItem extends StatelessWidget {

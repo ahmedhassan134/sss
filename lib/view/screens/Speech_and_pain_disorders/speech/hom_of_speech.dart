@@ -1,9 +1,4 @@
-import 'package:fares_pro/view/screens/Introduction%20to%20communication%20science/language_acquisition.dart';
-import 'package:fares_pro/view/screens/Introduction%20to%20communication%20science/reasons_for_delayed_language_growth.dart';
-import 'package:fares_pro/view/screens/Introduction%20to%20communication%20science/sensor_tests/language.dart';
-import 'package:fares_pro/view/screens/Introduction%20to%20communication%20science/sensor_tests/test_hiring.dart';
-import 'package:fares_pro/view/screens/Introduction%20to%20communication%20science/sounding.dart';
-import 'package:fares_pro/view/screens/Introduction%20to%20communication%20science/speeking.dart';
+
 import 'package:fares_pro/view/screens/Speech_and_pain_disorders/speech/causes_of_speech.dart';
 import 'package:fares_pro/view/screens/Speech_and_pain_disorders/speech/family_of_speech.dart';
 import 'package:fares_pro/view/screens/Speech_and_pain_disorders/speech/famous_of_speech.dart';
@@ -13,10 +8,10 @@ import 'package:fares_pro/view/screens/Speech_and_pain_disorders/speech/special_
 import 'package:fares_pro/view/screens/Speech_and_pain_disorders/speech/treatment_of_speech.dart';
 import 'package:fares_pro/view/widgets/introduction_to_communication_science_button.dart';
 import 'package:flutter/material.dart';
-import 'package:pdfx/pdfx.dart';
+
 
 import '../../../../service/responsive.dart';
-import '../../../pdf_screen/pdf_screen.dart';
+
 import '../../../widgets/domain.dart';
 import '../../../widgets/subdomain.dart';
 

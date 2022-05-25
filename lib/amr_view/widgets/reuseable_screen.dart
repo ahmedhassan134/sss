@@ -55,7 +55,7 @@ class _ReUseableScreenState extends State<ReUseableScreen> {
               title: Text(widget.title),
             )
           : AppBar(
-              iconTheme: IconThemeData(color: Colors.black),
+              iconTheme: const IconThemeData(color: Colors.black),
               backgroundColor: Colors.white,
               elevation: 0.0,
             ),

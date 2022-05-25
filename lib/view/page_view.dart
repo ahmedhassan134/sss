@@ -1,8 +1,8 @@
-import 'dart:async';
+
 
 import 'package:fares_pro/service/responsive.dart';
 import 'package:fares_pro/view/screens/home_screen.dart';
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
 
 
@@ -21,6 +21,7 @@ class _PaageViewState extends State<PaageView> {
 
 
 
+  @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     return Scaffold(
@@ -65,12 +66,12 @@ class _PaageViewState extends State<PaageView> {
                   )
                   );
                 },
-                color: Color(0x4485B2),
+                color: const Color(0xff4485B2),
                 child: FittedBox(
                   child:  Center(
                     child: FittedBox(
                       child: Container(
-                        padding: EdgeInsetsDirectional.all(.3),
+                        padding: const EdgeInsetsDirectional.all(.3),
                         child: Text(
                           'بدأ استخدام التطبيق',
                           style: TextStyle(color: Colors.white,fontSize: SizeConfig.defaultSize*2,),

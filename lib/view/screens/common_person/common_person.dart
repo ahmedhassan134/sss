@@ -4,7 +4,7 @@ import 'package:fares_pro/view/widgets/introduction_to_communication_science_but
 import 'package:flutter/material.dart';
 
 import '../../../service/responsive.dart';
-import '../../widgets/custom_expanded.dart';
+
 
 class CommonPerson extends StatelessWidget {
   const CommonPerson({Key? key}) : super(key: key);
@@ -35,7 +35,6 @@ class CommonPerson extends StatelessWidget {
               child: ListView.builder(
                 itemBuilder: (context, index) {
                   return IntroductionToCommunicationScienceButton(
-                    img: commonList[index].img,
 
                       clr: Colors.teal,
                       onTap: () {

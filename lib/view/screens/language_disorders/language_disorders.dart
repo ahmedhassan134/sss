@@ -42,7 +42,7 @@ class LanguageDisorders extends StatelessWidget {
                         builder: (context) {
                           return FaresReUseableScreen(
                             title: 'مراكز اللغة في المخ',
-                            listOfRichTextWidget:  [
+                            listOfRichTextWidget:  const [
                               MapEntry(
                                 Domain(text: 'أولا : مراكز اللغة في المخ :'),
                                 SubDomain(clr: Colors.white,
@@ -126,11 +126,11 @@ class LanguageDisorders extends StatelessWidget {
                   onTap: () {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) {
-                          return MechanicSpeeking(
+                          return const MechanicSpeeking(
                             title: 'ميكانيكية استيعاب الكلام في الدماغ',
                             listOfRichTextWidget:  [
                               MapEntry(
-                              const Domain(text: 'ميكانيكية استيعاب الكلام في الدماغ :'),
+                              Domain(text: 'ميكانيكية استيعاب الكلام في الدماغ :'),
                           SubDomain(clr: Colors.white,text: '''-	تصل النبضات العصبية المتولدة في الأذن الداخلية إلى الفص الصدغي ثم يصل للعصب السمعي، وبعد ذلك تصل إلى المنطقة السمعية ثم ترسل هذه النبضات إلى منطقة فيرنك حيث يتم تفسير وفهم الكلام المسموع.
 -	عندما يرتبط الكلام المسموع بتصور معين فهناك وسائل عصبية يتم إرسالها إلى منطقة (التلفيف الزاوية) حيث يتم تحويلها لمثير بصري. فتساعد منطقة فيرنك على تفسير الكلام.
 '''),
@@ -146,15 +146,15 @@ class LanguageDisorders extends StatelessWidget {
                   onTap: () {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) {
-                      return MechaniqueProduct(
+                      return const MechaniqueProduct(
                         title: 'ميكانيكية انتاج الكلام في الدماغ',
                         listOfRichTextWidget:  [
                           MapEntry(
-                            const Domain(text: ''),
+                            Domain(text: ''),
                           SubDomain(clr: Colors.white,text: '''-	عندما تريد إنتاج كلمة تؤخذ من منطقه فيرنك، وترسل عبر حزمة الألياف المقوسة إلى منطقة بروكا التي تحدد شكل هذه الكلمة ، ومن ثم ترسل الأمر إلى المنطقة المسئولة عن الحركة التي تختص الجهاز الصوتي وأعضاء النطق ، وفي الوقت ذاته يصدر الأمر إلى عضلات الجهاز التنفسي لكي يقوم بإخراج الهواء من الرئتين إلى القصبة الهوائية ومن ثم إلى الحنجرة.''')),
 
                           MapEntry(
-                          const Domain(text: 'ملحوظة : '),
+                          Domain(text: 'ملحوظة : '),
                           SubDomain(clr: Colors.white,text: '''عندما نريد أن نقرأ كلمة مكتوبة فالمعلومة تؤخذ من المنطقة البصرية الرئيسية وتنتقل إلى التلفيف الزاوية التي تربط بين الشكل البصري والشكل السمعي الكلمة المخزنة في منطقة فيرنك ومن ثم تأخذ نفس الرحلة السابقة عند نطق كلمة مسموع فإن المعلومات تنتقل من الأذن الداخلية ومنها للفص الصدغي ثم العصب السمعي.''')
                           ),
                          ],

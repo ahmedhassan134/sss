@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import '../../service/responsive.dart';
 
 class TextWidget extends StatelessWidget {
-   TextWidget({Key? key, required this.text,this.textD}) : super(key: key);
+   const TextWidget({Key? key, required this.text,this.textD}) : super(key: key);
   final String text;
- TextDirection ?textD;
+ final TextDirection ?textD;
 
   @override
   Widget build(BuildContext context) {

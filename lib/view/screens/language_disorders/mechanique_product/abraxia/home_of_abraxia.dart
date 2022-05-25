@@ -47,7 +47,7 @@ class HomeOfAbraxia extends StatelessWidget {
                         onTap: () {
                           Navigator.push(context,
                               MaterialPageRoute(builder: (context) {
-                                return IntroductionOfAbraxia(
+                                return const IntroductionOfAbraxia(
                                   title: 'التعريف',
                                   listOfRichTextWidget:  [
                                     MapEntry(
@@ -67,7 +67,7 @@ class HomeOfAbraxia extends StatelessWidget {
                         onTap: () {
                           Navigator.push(context,
                               MaterialPageRoute(builder: (context) {
-                                return CausesOfAbraxia(
+                                return const CausesOfAbraxia(
                                   title: 'الاسباب',
                                   listOfRichTextWidget:  [
                                     MapEntry(
@@ -87,7 +87,7 @@ class HomeOfAbraxia extends StatelessWidget {
                         onTap: () {
                           Navigator.push(context,
                               MaterialPageRoute(builder: (context) {
-                                return SymptomsOfAbraxia(
+                                return const SymptomsOfAbraxia(
                                   title: 'الاعراض  ',
                                   listOfRichTextWidget:  [
                                     MapEntry(
@@ -108,7 +108,7 @@ class HomeOfAbraxia extends StatelessWidget {
                         onTap: () {
                           Navigator.push(context,
                               MaterialPageRoute(builder: (context) {
-                                return TreatmentOfAbraxia(
+                                return const TreatmentOfAbraxia(
                                   title: 'العلاج   ',
                                   listOfRichTextWidget: [
                                     MapEntry(
@@ -130,7 +130,7 @@ class HomeOfAbraxia extends StatelessWidget {
                         onTap: () {
                           Navigator.push(context,
                               MaterialPageRoute(builder: (context) {
-                                return InterventionMethodOfAbraxia(
+                                return const InterventionMethodOfAbraxia(
                                   title: 'أساليب التدخل  ',
                                   listOfRichTextWidget: [
                                     MapEntry(

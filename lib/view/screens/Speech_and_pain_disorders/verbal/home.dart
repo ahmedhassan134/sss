@@ -2,14 +2,14 @@ import 'package:fares_pro/view/screens/Speech_and_pain_disorders/stammering/intr
 
 import 'package:fares_pro/view/screens/Speech_and_pain_disorders/verbal/causes.dart';
 import 'package:fares_pro/view/screens/Speech_and_pain_disorders/verbal/class.dart';
-import 'package:fares_pro/view/screens/Speech_and_pain_disorders/verbal/classifiction.dart';
+
 import 'package:fares_pro/view/screens/Speech_and_pain_disorders/verbal/intro.dart';
 import 'package:fares_pro/view/widgets/introduction_to_communication_science_button.dart';
 import 'package:flutter/material.dart';
-import 'package:pdfx/pdfx.dart';
+
 
 import '../../../../service/responsive.dart';
-import '../../../pdf_screen/pdf_screen.dart';
+
 import '../../../widgets/domain.dart';
 import '../../../widgets/subdomain.dart';
 
@@ -46,7 +46,7 @@ class HomeOfVerbal extends StatelessWidget {
                         builder: (context) {
                           return IntroOfVerbal(
                             title: 'التعريف',
-                            listOfRichTextWidget: [
+                            listOfRichTextWidget: const [
                               MapEntry(
                                   Domain(text: ''),
                                   SubDomain(
@@ -72,7 +72,7 @@ class HomeOfVerbal extends StatelessWidget {
                         builder: (context) {
                           return CausesOfVerbal(
                             title: '	الأسباب',
-                            listOfRichTextWidget: [
+                            listOfRichTextWidget: const [
                               MapEntry(
                                   Domain(text: ''),
                                   SubDomain(
@@ -112,7 +112,7 @@ class HomeOfVerbal extends StatelessWidget {
                         builder: (context) {
                           return IntroOfStamming(
                             title: '	تقييم حالات الحبسة ',
-                            listOfRichTextWidget: [
+                            listOfRichTextWidget: const [
                               MapEntry(
                                   Domain(text: ''),
                                   SubDomain(
@@ -137,7 +137,7 @@ class HomeOfVerbal extends StatelessWidget {
                                       clr: Colors.white,
                                       text:
                                           '''نطلب من المريض ان يصدر 3 مقاطع ساكنه يتبعها متحرك 
-مثل یا \تا \کا ويكررها 5 مرات في نفس واحد لتحديد مدى قدرته على توضيح كلامه، أحيانا قد تطلب من المريض أن يعد الأرقام من ۱۰:1 
+مثل یا تا کا ويكررها 5 مرات في نفس واحد لتحديد مدى قدرته على توضيح كلامه، أحيانا قد تطلب من المريض أن يعد الأرقام من ۱۰:1 
 
 ''')),
                             ],
@@ -157,7 +157,7 @@ class HomeOfVerbal extends StatelessWidget {
                         builder: (context) {
                           return IntroOfVerbal(
                             title: '	علاج الحبسه الكلامية',
-                            listOfRichTextWidget: [
+                            listOfRichTextWidget: const [
                               MapEntry(
                                   Domain(
                                       text:

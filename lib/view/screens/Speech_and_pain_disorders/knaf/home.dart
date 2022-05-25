@@ -4,17 +4,13 @@ import 'package:fares_pro/view/screens/Speech_and_pain_disorders/knaf/reasons.da
 import 'package:fares_pro/view/screens/Speech_and_pain_disorders/knaf/sound.dart';
 import 'package:fares_pro/view/screens/Speech_and_pain_disorders/knaf/treatment.dart';
 import 'package:fares_pro/view/screens/Speech_and_pain_disorders/knaf/types.dart';
-import 'package:fares_pro/view/screens/Speech_and_pain_disorders/stammering/intro.dart';
 
-import 'package:fares_pro/view/screens/Speech_and_pain_disorders/verbal/causes.dart';
-import 'package:fares_pro/view/screens/Speech_and_pain_disorders/verbal/classifiction.dart';
-import 'package:fares_pro/view/screens/Speech_and_pain_disorders/verbal/intro.dart';
 import 'package:fares_pro/view/widgets/introduction_to_communication_science_button.dart';
 import 'package:flutter/material.dart';
-import 'package:pdfx/pdfx.dart';
+
 
 import '../../../../service/responsive.dart';
-import '../../../pdf_screen/pdf_screen.dart';
+
 import '../../../widgets/domain.dart';
 import '../../../widgets/subdomain.dart';
 

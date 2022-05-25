@@ -1,7 +1,6 @@
 import 'package:fares_pro/service/responsive.dart';
 import 'package:fares_pro/view/widgets/container_in_above.dart';
-import 'package:fares_pro/view/widgets/domain.dart';
-import 'package:fares_pro/view/widgets/subdomain.dart';
+
 import 'package:flutter/material.dart';
 
 class CenterLanguageInDisorders extends StatelessWidget {

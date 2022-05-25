@@ -10,7 +10,7 @@ import '../../../../../service/responsive.dart';
 import '../../../../widgets/custom_container_home_screen.dart';
 import '../../../../widgets/domain.dart';
 import '../../../../widgets/subdomain.dart';
-import '../mechanique_product.dart';
+
 import 'introduction.dart';
 class ElaeeHomeScreen extends StatelessWidget {
   const ElaeeHomeScreen({Key? key}) : super(key: key);
@@ -50,7 +50,7 @@ class ElaeeHomeScreen extends StatelessWidget {
                         onTap: () {
                           Navigator.push(context,
                               MaterialPageRoute(builder: (context) {
-                                return IntroductionOfBlindess(
+                                return const IntroductionOfBlindess(
                                   title: 'تعريف العي  ',
                                   listOfRichTextWidget:  [
                                     MapEntry(
@@ -78,7 +78,7 @@ class ElaeeHomeScreen extends StatelessWidget {
                         onTap: () {
                           Navigator.push(context,
                               MaterialPageRoute(builder: (context) {
-                                return CausesOfBlindess(
+                                return const CausesOfBlindess(
                                   title: 'أسباب العی',
                                   listOfRichTextWidget:  [
                                     MapEntry(
@@ -110,7 +110,7 @@ class ElaeeHomeScreen extends StatelessWidget {
                         onTap: () {
                           Navigator.push(context,
                               MaterialPageRoute(builder: (context) {
-                                return TypesOfBlindess(
+                                return const TypesOfBlindess(
                                   title: 'أنواع العي واعراض كل نوع',
                                   listOfRichTextWidget:  [
                                     MapEntry(
@@ -153,7 +153,7 @@ class ElaeeHomeScreen extends StatelessWidget {
                         onTap: () {
                           Navigator.push(context,
                               MaterialPageRoute(builder: (context) {
-                                return ProblemWithBlindess(
+                                return const ProblemWithBlindess(
                                   title: 'المشاكل المصاحبه للعي',
                                   listOfRichTextWidget:  [
                                     MapEntry(
@@ -179,7 +179,7 @@ class ElaeeHomeScreen extends StatelessWidget {
                         onTap: () {
                           Navigator.push(context,
                               MaterialPageRoute(builder: (context) {
-                                return TestOfBlindess(
+                                return const TestOfBlindess(
                                   title: 'اختبار العي',
                                   listOfRichTextWidget:  [
                                     MapEntry(
@@ -265,7 +265,7 @@ class ElaeeHomeScreen extends StatelessWidget {
                         onTap: () {
                           Navigator.push(context,
                               MaterialPageRoute(builder: (context) {
-                                return AssementOfBlindess(
+                                return const AssementOfBlindess(
                                   title: 'تقييم مرضى العي ',
                                   listOfRichTextWidget:  [
                                     MapEntry(
@@ -295,7 +295,7 @@ class ElaeeHomeScreen extends StatelessWidget {
                         onTap: () {
                           Navigator.push(context,
                               MaterialPageRoute(builder: (context) {
-                                return RehabilitionBlindess(
+                                return const RehabilitionBlindess(
                                   title: 'تأهيل حالات العي ',
                                   listOfRichTextWidget: [
                                     MapEntry(
@@ -455,7 +455,7 @@ class ElaeeHomeScreen extends StatelessWidget {
                                     ),
                                 MapEntry(
                                 Domain(text: '3)	الوسائل التخاطبيه الالية '),
-                                SubDomain(clr: Colors.white,text: '''وهي وسيلة تخاطبيه بديله تستخدم جهاز كهروميكانيكي مع مولد الذبذبة الرمزية المحور  ‎(Transistor ‎code Iscillator) ‎
+                                SubDomain(clr: Colors.white,text: '''وهي وسيلة تخاطبيه بديله تستخدم جهاز كهروميكانيكي مع مولد الذبذبة الرمزية المحور  (Transistor code Iscillator) 
 وقام بالعمل "فيهاجن واله" عام 1973 تم تزويد الجهاز بكلمات نعم ولا وتحتاج للمساعدة كما تم تزويده بمفاهيم اخري من الاحتياجات والاحاسيس والناس والأماكن.
 '''),),
                                   ],

@@ -5,9 +5,7 @@ class AppPresenterModel {
 }
 
 List<AppPresenterModel> presenterList = [
-  AppPresenterModel(
-      img: 'assets/images/app_presenter_stuff/islam.jpg',
-      text: 'اسلام محمد شحاته'),
+
   AppPresenterModel(
       img: 'assets/images/im1.jpg',
       text: 'عصام احمد عثمان'),
@@ -57,9 +55,7 @@ List<AppPresenterModel> presenterList = [
   AppPresenterModel(
       img: 'assets/images/app_presenter_stuff/bosi.jpg',
       text: 'بوسي خلف هريدي '),
-  AppPresenterModel(
-      img: 'assets/images/app_presenter_stuff/aya ali.jpg',
-      text: 'ايه علي عبدالستار '),
+
   AppPresenterModel(
       img: 'assets/images/app_presenter_stuff/heba.jpg', text: 'هبة محمد احمد'),
   AppPresenterModel(

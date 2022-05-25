@@ -1,9 +1,7 @@
 import 'package:fares_pro/amr_view/widgets/reuseable_screen.dart';
-import 'package:fares_pro/view/pdf_screen/pdf_screen.dart';
-import 'package:fares_pro/view/screens/Sound_disturbances/widgets/default_screen.dart';
-import 'package:fares_pro/view/screens/pdf_view_screen/pdf_viewer.dart';
+
 import 'package:flutter/material.dart';
-import 'package:pdfx/pdfx.dart';
+
 
 import '../../../service/responsive.dart';
 import '../../widgets/introduction_to_communication_science_button.dart';
@@ -59,7 +57,7 @@ class SoundDisturbances extends StatelessWidget {
                       builder: (context) {
                         return ReUseableScreen(
                           title: ' متطلبات اخراج الصوت الجيد',
-                          listOfRichTextWidget: [
+                          listOfRichTextWidget: const [
                             MapEntry(
                               "",
                ''' لكي يتم اصدار صوت سليم نحتاج لتواجد عده متطلبات وإذا غاب أحدها اختل الصوت وهي:                   
@@ -79,7 +77,7 @@ class SoundDisturbances extends StatelessWidget {
                   onTap: () {
                     Navigator.push(context, MaterialPageRoute(
                       builder: (context) {
-                        return ReUseableScreen(listOfRichTextWidget: [
+                        return ReUseableScreen(listOfRichTextWidget: const [
                           MapEntry(
                             '',
                  ''' من الناحية الفسيولوجية الوظيفية تعتبر الحنجرة هي المسؤولة عن اصدار الصوت بالإضافة الى وظائف الحنجرة الاخرى لأنها جزء من الجهاز التنفسي العلوي وهي الحارس الامين الذي يحمينا من دخول الاجسام الغريبة الى الجهاز التنفسي وما يمكن ان يؤدي الى حدوث اختناق فهي خط حمايه هام واثناء البلع تغلق الحنجرة تماما بواسطه الثنايا الصوتية فتمنع دخول الطعام او الشراب الى جهاز التنفسي وهذه وظيفه حمايه هامه كما  ان الحنجرة مسؤوله عن زياده ضغط الهواء بداخل القفص الصدري وذلك هام جدا الامور كثيرا منها الولادة ومن هنا يتضح لنا ان الحنجرة هي  جزء هام وحساس لذلك لابد ان تعلم كيفيه الحفاظ عليها

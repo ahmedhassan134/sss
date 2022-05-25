@@ -14,6 +14,7 @@ class  CustomGesterDetectorDrawer extends StatelessWidget {
     return Container(
       margin: EdgeInsets.symmetric(horizontal: SizeConfig.defaultSize*.2),
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
 
         children: [
           Expanded
@@ -23,7 +24,7 @@ class  CustomGesterDetectorDrawer extends StatelessWidget {
           Expanded(
             child: GestureDetector(
               onTap: onTap,
-              child: Text(text,style:  TextStyle(color: Colors.black,fontSize:SizeConfig.defaultSize* 2.4,fontWeight: FontWeight.bold),),
+              child: Text(text,style:  TextStyle(color: Colors.black,fontSize:SizeConfig.defaultSize* 2,fontWeight: FontWeight.w900),),
             ),flex: 3,
           ),
         ],

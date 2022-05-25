@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import '../../service/responsive.dart';
 
 class CustomExpanded extends StatelessWidget {
-  CustomExpanded({Key? key, required this.img,required this.text}) : super(key: key);
-  String ? img;
-  String ? text;
+  const CustomExpanded({Key? key, required this.img,required this.text}) : super(key: key);
+  final String ? img;
+  final String ? text;
 
 
   @override

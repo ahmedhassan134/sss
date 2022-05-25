@@ -6,7 +6,7 @@ import 'package:fares_pro/view/screens/drawer_screen/app_presenter.dart';
 import 'package:fares_pro/view/screens/drawer_screen/sources_and_references1.dart';
 import 'package:fares_pro/view/screens/home_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
+
 import 'package:url_launcher/url_launcher_string.dart';
 
 import 'custom_button_drawer.dart';
@@ -79,7 +79,7 @@ class DrawerWidget extends StatelessWidget {
                       onTap: () {
                         Navigator.push(context,
                             MaterialPageRoute(builder: (BuildContext context) {
-                          return AmrAppPresenter();
+                          return const AmrAppPresenter();
                         }));
                       },
                       text: 'مقدمي البرنامج '),
@@ -93,59 +93,62 @@ class DrawerWidget extends StatelessWidget {
                     margin: EdgeInsetsDirectional.only(
                         start: SizeConfig.defaultSize * .2,
                         end: SizeConfig.defaultSize * .6),
-                    child: Row(
-                      children: [
-                        Expanded(
-                          child: IconButton(
-                            onPressed: () async {
-                              final Uri params = Uri(
-                                scheme: 'mailto',
-                                path: 'Emandiab048@gmail.com',
-                                query:
-                                    'subject=دليك في التخاطب ', //add subject and body here
-                              );
+                    child: Container(
+                      margin: EdgeInsetsDirectional.only(end: SizeConfig.defaultSize * 3),
+                      child: Row(
+                        children: [
+                          Expanded(
+                            child: IconButton(
+                              onPressed: () async {
+                                final Uri params = Uri(
+                                  scheme: 'mailto',
+                                  path: 'Emandiab048@gmail.com',
+                                  query:
+                                      'subject=دليك في التخاطب ', //add subject and body here
+                                );
 
-                              var url = params.toString();
-                              if (await canLaunchUrlString(url)) {
-                                await launchUrlString(url);
-                              } else {
-                                throw 'Could not launch $url';
-                              }
-                            },
-                            icon: Icon(
-                              Icons.outgoing_mail,
-                              size: SizeConfig.defaultSize * 3.5,
-                              color: Colors.black,
+                                var url = params.toString();
+                                if (await canLaunchUrlString(url)) {
+                                  await launchUrlString(url);
+                                } else {
+                                  throw 'Could not launch $url';
+                                }
+                              },
+                              icon: Icon(
+                                Icons.outgoing_mail,
+                                size: SizeConfig.defaultSize * 3.5,
+                                color: Colors.black,
+                              ),
                             ),
+                            flex: 1,
                           ),
-                          flex: 1,
-                        ),
-                        Expanded(
-                          child: TextButton(
-                            onPressed: () async {
-                              final Uri params = Uri(
-                                scheme: 'mailto',
-                                path: 'Emandiab048@gmail.com',
-                                query:
-                                    'subject=دليك في التخاطب ', //add subject and body here
-                              );
+                          Expanded(
+                            child: TextButton(
+                              onPressed: () async {
+                                final Uri params = Uri(
+                                  scheme: 'mailto',
+                                  path: 'Emandiab048@gmail.com',
+                                  query:
+                                      'subject=دليك في التخاطب ', //add subject and body here
+                                );
 
-                              var url = params.toString();
-                              if (await canLaunchUrlString(url)) {
-                                await launchUrlString(url);
-                              } else {
-                                throw 'Could not launch $url';
-                              }
-                            },
-                            child: Text('غرفة التواصل ',
-                                style: TextStyle(
-                                    fontSize: SizeConfig.defaultSize * 2.4,
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.bold)),
-                          ),
-                          flex: 3,
-                        )
-                      ],
+                                var url = params.toString();
+                                if (await canLaunchUrlString(url)) {
+                                  await launchUrlString(url);
+                                } else {
+                                  throw 'Could not launch $url';
+                                }
+                              },
+                              child: Text('غرفة التواصل ',
+                                  style: TextStyle(
+                                      fontSize: SizeConfig.defaultSize * 2,
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.w900)),
+                            ),
+                            flex: 3,
+                          )
+                        ],
+                      ),
                     ),
                   ),
                   CustomGesterDetectorDrawer(

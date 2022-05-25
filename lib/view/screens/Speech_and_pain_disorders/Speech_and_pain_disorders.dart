@@ -1,13 +1,10 @@
-import 'package:fares_pro/amr_view/widgets/reuseable_navigation_page.dart';
-import 'package:fares_pro/amr_view/widgets/reuseable_screen.dart';
-import 'package:fares_pro/amr_view/widgets/reuseable_screen_with_pdf.dart';
-import 'package:fares_pro/view/pdf_screen/pdf_screen.dart';
+
 import 'package:fares_pro/view/screens/Speech_and_pain_disorders/knaf/home.dart';
 import 'package:fares_pro/view/screens/Speech_and_pain_disorders/speech/hom_of_speech.dart';
 import 'package:fares_pro/view/screens/Speech_and_pain_disorders/stammering/home.dart';
 import 'package:fares_pro/view/screens/Speech_and_pain_disorders/verbal/home.dart';
 import 'package:flutter/material.dart';
-import 'package:pdfx/pdfx.dart';
+
 
 import '../../../service/responsive.dart';
 import '../../widgets/introduction_to_communication_science_button.dart';

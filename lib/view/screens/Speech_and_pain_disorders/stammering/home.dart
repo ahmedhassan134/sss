@@ -10,10 +10,10 @@ import 'package:fares_pro/view/screens/Speech_and_pain_disorders/stammering/trea
 import 'package:fares_pro/view/screens/Speech_and_pain_disorders/stammering/whatis.dart';
 import 'package:fares_pro/view/widgets/introduction_to_communication_science_button.dart';
 import 'package:flutter/material.dart';
-import 'package:pdfx/pdfx.dart';
+
 
 import '../../../../service/responsive.dart';
-import '../../../pdf_screen/pdf_screen.dart';
+
 import '../../../widgets/domain.dart';
 import '../../../widgets/subdomain.dart';
 
@@ -112,7 +112,7 @@ class HomeOfStamming extends StatelessWidget {
                       context,
                       MaterialPageRoute(
                         builder: (context) {
-                          return PercentOfStamming(
+                          return const PercentOfStamming(
                               title: '		نسبة الحدوث',
                               listOfRichTextWidget:  [
                                 MapEntry(
@@ -155,7 +155,7 @@ class HomeOfStamming extends StatelessWidget {
                       context,
                       MaterialPageRoute(
                         builder: (context) {
-                          return ShapeOfStamming(
+                          return const ShapeOfStamming(
                               title: '		أشكال التلعثم ',
                               listOfRichTextWidget:  [
                                 MapEntry(
@@ -197,7 +197,7 @@ class HomeOfStamming extends StatelessWidget {
                         MaterialPageRoute(builder: (context) {
                           return AraadOfStamming(
                               title: '		اعراض التلعثم ',
-                              listOfRichTextWidget:  [
+                              listOfRichTextWidget:  const [
                                 MapEntry(
                                     Domain(text: '			أعراض التلعثم:'),
                              SubDomain(clr:Colors.white ,text: '''1)	اعراض صريحة:
@@ -247,7 +247,7 @@ class HomeOfStamming extends StatelessWidget {
                   onTap: () {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) {
-                          return TaheelOfStamming(
+                          return const TaheelOfStamming(
                             title: '	تصنيف بلادشتين  ',
                             listOfRichTextWidget:  [
                               MapEntry(
@@ -295,7 +295,7 @@ class HomeOfStamming extends StatelessWidget {
                         MaterialPageRoute(builder: (context) {
                           return TreatmentOfStamming(
                               title: '		علاج التلعثم ',
-                              listOfRichTextWidget:  [
+                              listOfRichTextWidget:  const [
                                 MapEntry(
                                   Domain(text: '',),
                                   SubDomain(clr: Colors.white,text: '''اختلفت طرق علاج التلعثم اختلافا كبيرة وذلك نتيجة الاختلاف النظريات التي وضعت لتفسيره ولذا تعددت وتفاوتت الطرق ابتداء من الوسائل البدائية للعلاج إلى أخرى حديثة نسبية أو أكثر إقناعه تستخدم اليوم''',),
@@ -433,7 +433,7 @@ class HomeOfStamming extends StatelessWidget {
                         builder: (context) {
                           return WhatIsOfStamming(
                             title: '	ما هي عدم الطلاقه الطبيعيه  ',
-                            listOfRichTextWidget:  [
+                            listOfRichTextWidget:  const [
                               MapEntry(
                                   Domain(text: '		'),
                                   SubDomain(clr: Colors.white,text: '''هي ظاهرة تحدث مع الأطفال في السنوات المبكرة بدءا من 3 سنوات وحتي 6 سنوات وهي من نمو اللغة للطفل ، لكنها ليست بالقدر الكافي لكي تتيح لهذا الطفل حرية التعبير بما يتناسب وحجم هذه الحصيلة. 
@@ -459,7 +459,7 @@ class HomeOfStamming extends StatelessWidget {
                   onTap: () {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) {
-                          return TaheelOfStamming(
+                          return const TaheelOfStamming(
                             title: '	تأهيل التلعثم  ',
                             listOfRichTextWidget:  [
                               MapEntry(

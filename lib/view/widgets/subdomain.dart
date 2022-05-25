@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../service/responsive.dart';
 class SubDomain extends StatelessWidget {
-   SubDomain({Key? key,required this.text,required this.clr}) : super(key: key);
+   const SubDomain({Key? key,required this.text,required this.clr}) : super(key: key);
 final String text;
  final Color clr;
   @override

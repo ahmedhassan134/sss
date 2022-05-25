@@ -62,7 +62,7 @@ flutter:
     - assets/images/common_person/
     - assets/images/person_faculty/
     - assets/pdf/
-    - assets/pdfs/
+
   # assets:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
