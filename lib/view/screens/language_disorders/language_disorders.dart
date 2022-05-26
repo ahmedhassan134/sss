@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import '../../../service/responsive.dart';
 import '../../widgets/custom_container_home_screen.dart';
 import '../../widgets/introduction_to_communication_science_button.dart';
-import 'center_language_in _disorders.dart';
+
 import 'mechanique.dart';
 import 'mechanique_product/abraxia/home_of_abraxia.dart';
 import 'mechanique_product/elaee/home.dart';
@@ -40,9 +40,9 @@ class LanguageDisorders extends StatelessWidget {
                       context,
                       MaterialPageRoute(
                         builder: (context) {
-                          return FaresReUseableScreen(
+                          return const FaresReUseableScreen(
                             title: 'مراكز اللغة في المخ',
-                            listOfRichTextWidget:  const [
+                            listOfRichTextWidget:  [
                               MapEntry(
                                 Domain(text: 'أولا : مراكز اللغة في المخ :'),
                                 SubDomain(clr: Colors.white,

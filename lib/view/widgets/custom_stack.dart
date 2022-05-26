@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 import '../../service/responsive.dart';
 
 class Stackk extends StatelessWidget {
-  Stackk({Key? key, required this.img,this.num1, this.num2, this.pos1,this.pos2}) : super(key: key);
+  const Stackk({Key? key, required this.img,this.num1, this.num2, this.pos1,this.pos2}) : super(key: key);
   final String img;
-  double?  num1;
-  double? num2;
-  double ?pos1;
-  double ?pos2;
+  final double?  num1;
+  final double? num2;
+ final double ?pos1;
+  final double ?pos2;
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +18,7 @@ class Stackk extends StatelessWidget {
       children: [
         //CustomStack(onTap: null, text: 'النصائح والارشادات', img: 'assets/images/tips_and_advice/1.png'),
         Container(
-          margin: const EdgeInsetsDirectional.only(bottom: 20),
+          margin:  EdgeInsetsDirectional.only(bottom: SizeConfig.defaultSize *2),
 
           width: double.infinity,
           height: MediaQuery.of(context).size.height * .25,

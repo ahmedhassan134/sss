@@ -1,3 +1,4 @@
+import 'package:fares_pro/service/responsive.dart';
 import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
@@ -14,16 +15,16 @@ class CustomColumnAppPresenter extends StatelessWidget {
     return Column(
       children: [
         ClipRRect(
-            borderRadius: BorderRadius.circular(20),
-            child: const CircleAvatar(
-              radius: 20,
+            borderRadius: BorderRadius.circular(SizeConfig.defaultSize *2),
+            child:  CircleAvatar(
+              radius: SizeConfig.defaultSize *2,
               backgroundColor: Colors.deepPurple,
             )
             //Image.asset(img,height: 80,width: 80,),
 
             ),
-        const SizedBox(
-          height: 5,
+         SizedBox(
+          height: SizeConfig.defaultSize *.4,
         ),
         Column(
           children: [
@@ -37,8 +38,8 @@ class CustomColumnAppPresenter extends StatelessWidget {
             ),
           ],
         ),
-        const SizedBox(
-          height: 8,
+         SizedBox(
+          height: SizeConfig.defaultSize *.8,
         )
       ],
     );

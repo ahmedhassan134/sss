@@ -43,7 +43,7 @@ class HomeOfKnaf extends StatelessWidget {
                       context,
                       MaterialPageRoute(
                         builder: (context) {
-                          return SoundOfKnaf(
+                          return const SoundOfKnaf(
                             title: 'الحجرات الصوتية ووظائفها',
                             listOfRichTextWidget:  [
                               MapEntry(
@@ -80,7 +80,7 @@ class HomeOfKnaf extends StatelessWidget {
                       context,
                       MaterialPageRoute(
                         builder: (context) {
-                          return IntroOfKnaf(
+                          return const IntroOfKnaf(
                             title: '	 تعريف الخنف',
                             listOfRichTextWidget:  [
                               MapEntry(
@@ -102,7 +102,7 @@ class HomeOfKnaf extends StatelessWidget {
                       context,
                       MaterialPageRoute(
                         builder: (context) {
-                          return TypeOfKnaf(
+                          return const TypeOfKnaf(
                             title: 'أنواع الخنف',
                             listOfRichTextWidget:  [
                               MapEntry(
@@ -160,7 +160,7 @@ class HomeOfKnaf extends StatelessWidget {
                       context,
                       MaterialPageRoute(
                         builder: (context) {
-                          return TreatmentOfKnaf(
+                          return const TreatmentOfKnaf(
                             title: 'علاج الخنف',
                             listOfRichTextWidget:  [
                               MapEntry(

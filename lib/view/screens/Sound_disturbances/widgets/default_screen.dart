@@ -14,7 +14,7 @@ class DefaultScreen extends StatelessWidget {
         onPressed: () {
           FlutterTts().speak(text);
         },
-        child: Icon(Icons.play_arrow),
+        child: const Icon(Icons.play_arrow),
       ),
       appBar: AppBar(title: Text(title)),
       body: SingleChildScrollView(

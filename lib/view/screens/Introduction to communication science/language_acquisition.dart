@@ -12,14 +12,14 @@ import '../../../../../service/responsive.dart';
 
 
 class LanguageAcquisition extends StatefulWidget {
-  LanguageAcquisition(
+  const LanguageAcquisition(
       {Key? key,
         required this.title,
         this.titleImagePath,
         required this.listOfRichTextWidget})
       : super(key: key);
   final String title;
-  String? titleImagePath;
+final  String? titleImagePath;
   final List<MapEntry<Domain, SubDomain>> listOfRichTextWidget;
 
   @override
@@ -82,7 +82,7 @@ class _ReUseableScreenState extends State<LanguageAcquisition> {
                   height: SizeConfig.defaultSize * 4,
                 ),
                 ListView.builder(
-                  physics: NeverScrollableScrollPhysics(),
+                  physics: const NeverScrollableScrollPhysics(),
                   shrinkWrap: true,
                   itemCount: widget.listOfRichTextWidget.length,
                   itemBuilder: (context, index) {

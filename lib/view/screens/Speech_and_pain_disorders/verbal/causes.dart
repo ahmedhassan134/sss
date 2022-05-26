@@ -12,14 +12,14 @@ import '../../../../../service/responsive.dart';
 
 
 class CausesOfVerbal extends StatefulWidget {
-  CausesOfVerbal(
+  const CausesOfVerbal(
       {Key? key,
         required this.title,
         this.titleImagePath,
         required this.listOfRichTextWidget})
       : super(key: key);
   final String title;
-  String? titleImagePath;
+final  String? titleImagePath;
   final List<MapEntry<Domain, SubDomain>> listOfRichTextWidget;
 
   @override

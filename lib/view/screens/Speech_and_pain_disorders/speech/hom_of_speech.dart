@@ -44,7 +44,7 @@ class HomeOfSpeech extends StatelessWidget {
                       context,
                       MaterialPageRoute(
                         builder: (context) {
-                          return IntroductionOfSpeech(
+                          return const IntroductionOfSpeech(
                             title: 'التعريف',
                             listOfRichTextWidget:  [
                               MapEntry(
@@ -68,7 +68,7 @@ class HomeOfSpeech extends StatelessWidget {
                       context,
                       MaterialPageRoute(
                         builder: (context) {
-                          return ShapeOfSpeech(
+                          return const ShapeOfSpeech(
                             title: '	صور و أشكال اللدغات',
                             listOfRichTextWidget:  [
                               MapEntry(
@@ -109,7 +109,7 @@ class HomeOfSpeech extends StatelessWidget {
                       context,
                       MaterialPageRoute(
                         builder: (context) {
-                          return CausesOfSpeech(
+                          return const CausesOfSpeech(
                               title: '	أسباب حدوث اللدغات',
                               listOfRichTextWidget:  [
                                 MapEntry(
@@ -168,7 +168,7 @@ class HomeOfSpeech extends StatelessWidget {
                       context,
                       MaterialPageRoute(
                         builder: (context) {
-                          return FamilyOfSpeech(
+                          return const FamilyOfSpeech(
                               title: '	عائلات الأصوات ',
                               listOfRichTextWidget:  [
                                 MapEntry(
@@ -213,7 +213,7 @@ class HomeOfSpeech extends StatelessWidget {
                       context,
                       MaterialPageRoute(
                         builder: (context) {
-                          return FamouesOfSpeech(
+                          return const FamouesOfSpeech(
                             title: '	أشهر اللادغات :',
                             listOfRichTextWidget:  [
 
@@ -237,9 +237,9 @@ class HomeOfSpeech extends StatelessWidget {
                               ),
                               MapEntry(
                                   Domain(text: 'قلب المجهور الى مهموس'),
-                                  SubDomain(clr: Colors.white,text: '''مثال1: ز \ س      مجهور الي مهسوس               زبادي الي  سبادي
-مثال 2: د \ ت      مجهورا الي مهموس                 دفاية / تفاية
-مثال 3: ج \ ك     مجهورا الي مهموس                 جمل الي كمل
+                                  SubDomain(clr: Colors.white,text: '''مثال1: ز  س      مجهور الي مهسوس               زبادي الي  سبادي
+مثال 2: د  ت      مجهورا الي مهموس                 دفاية / تفاية
+مثال 3: ج  ك     مجهورا الي مهموس                 جمل الي كمل
 ''')
                               ),
                               MapEntry(
@@ -264,7 +264,7 @@ class HomeOfSpeech extends StatelessWidget {
                       context,
                       MaterialPageRoute(
                         builder: (context) {
-                          return TreatmentOfSpeech(
+                          return const TreatmentOfSpeech(
                             title: '	علاج اللدغات:',
                             listOfRichTextWidget:  [
                               MapEntry(

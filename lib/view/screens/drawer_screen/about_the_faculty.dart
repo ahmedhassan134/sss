@@ -40,38 +40,42 @@ class AboutTheFaculty extends StatelessWidget {
             ),
             child: Column(
               children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    // Expanded(child: Image.asset('assets/images/bns.png')),
-                    CircleAvatar(
-                      radius: SizeConfig.defaultSize * 3,
-                      backgroundImage: const AssetImage('assets/images/bns.png'),
-                    ),
-                    SizedBox(
-                      width: SizeConfig.defaultSize * 1,
-                    ),
-                    const Expanded(
-                      child: Text(
-                        'كليه علوم ذوي الاحتياجات الخاصه جامعه بني سويف ',
-                        style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-                        textAlign: TextAlign.center,
+                Expanded(
+
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      // Expanded(child: Image.asset('assets/images/bns.png')),
+                      CircleAvatar(
+                        radius: SizeConfig.defaultSize * 3,
+                        backgroundImage: const AssetImage('assets/images/bns.png'),
                       ),
-                    ),
-                    SizedBox(
-                      width: SizeConfig.defaultSize * 1,
-                    ),
-                    CircleAvatar(
-                      radius: SizeConfig.defaultSize * 3,
-                      backgroundImage: const AssetImage('assets/images/bns2.jfif'),
-                    ),
-                  ],
+                      SizedBox(
+                        width: SizeConfig.defaultSize * 1,
+                      ),
+                      const Expanded(
+                        child: Text(
+                          'كليه علوم ذوي الاحتياجات الخاصه جامعه بني سويف ',
+                          style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                          textAlign: TextAlign.center,
+                        ),
+                      ),
+                      SizedBox(
+                        width: SizeConfig.defaultSize * 1,
+                      ),
+                      CircleAvatar(
+                        radius: SizeConfig.defaultSize * 3,
+                        backgroundImage: const AssetImage('assets/images/bns2.jfif'),
+                      ),
+                    ],
+                  ),
+                  flex: 1,
                 ),
                 SizedBox(
                   height: SizeConfig.defaultSize * 3,
                 ),
                ClipRRect(
-                 borderRadius: BorderRadius.circular(16),
+                 borderRadius: BorderRadius.circular(SizeConfig.defaultSize *1),
                    child: Image.asset('assets/images/person_faculty/1.png')), SizedBox(
                   height: SizeConfig.defaultSize * 1,
                 ),
@@ -82,15 +86,16 @@ class AboutTheFaculty extends StatelessWidget {
                 Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
-                  children: const [
-                    Text('ا.د/منصور حسن',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
-                    Text('رئيس جامعة بني سويف',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
+                  children: [
+                    Text('ا.د/منصور حسن',style: TextStyle(fontSize: SizeConfig.defaultSize *2,fontWeight: FontWeight.bold),),
+                    Text('رئيس جامعة بني سويف',style: TextStyle(fontSize: SizeConfig.defaultSize *2,fontWeight: FontWeight.bold),),
                   ],
                 ),
                 SizedBox(height: SizeConfig.defaultSize *3,),
 
 
                 Expanded(
+                  flex: 3,
                   child: ListView.builder(
                     itemCount: facultyList.length,
                     // shrinkWrap: true,
@@ -126,8 +131,8 @@ class AboutTheFaculty extends StatelessWidget {
                             Center(
                               child: Text(
                                 facultyList[index].text,
-                                style: const TextStyle(
-                                    fontSize: 18, fontWeight: FontWeight.bold),
+                                style:  TextStyle(
+                                    fontSize: SizeConfig.defaultSize *1.6, fontWeight: FontWeight.bold),
                               textAlign: TextAlign.center,
                               ),
                             ),

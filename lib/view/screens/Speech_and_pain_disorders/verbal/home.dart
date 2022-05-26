@@ -44,9 +44,9 @@ class HomeOfVerbal extends StatelessWidget {
                       context,
                       MaterialPageRoute(
                         builder: (context) {
-                          return IntroOfVerbal(
+                          return const IntroOfVerbal(
                             title: 'التعريف',
-                            listOfRichTextWidget: const [
+                            listOfRichTextWidget: [
                               MapEntry(
                                   Domain(text: ''),
                                   SubDomain(
@@ -70,9 +70,9 @@ class HomeOfVerbal extends StatelessWidget {
                       context,
                       MaterialPageRoute(
                         builder: (context) {
-                          return CausesOfVerbal(
+                          return const CausesOfVerbal(
                             title: '	الأسباب',
-                            listOfRichTextWidget: const [
+                            listOfRichTextWidget: [
                               MapEntry(
                                   Domain(text: ''),
                                   SubDomain(
@@ -110,9 +110,9 @@ class HomeOfVerbal extends StatelessWidget {
                       context,
                       MaterialPageRoute(
                         builder: (context) {
-                          return IntroOfStamming(
+                          return const IntroOfStamming(
                             title: '	تقييم حالات الحبسة ',
-                            listOfRichTextWidget: const [
+                            listOfRichTextWidget: [
                               MapEntry(
                                   Domain(text: ''),
                                   SubDomain(
@@ -155,9 +155,9 @@ class HomeOfVerbal extends StatelessWidget {
                       context,
                       MaterialPageRoute(
                         builder: (context) {
-                          return IntroOfVerbal(
+                          return const IntroOfVerbal(
                             title: '	علاج الحبسه الكلامية',
-                            listOfRichTextWidget: const [
+                            listOfRichTextWidget: [
                               MapEntry(
                                   Domain(
                                       text:

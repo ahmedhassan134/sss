@@ -42,7 +42,7 @@ static String id='ss';
                       Navigator.pushNamed(context, SpeekingExcercise.id);
                     },onTap: (){
 
-                  Navigator.pushNamed(context, BreathingExcercise.id);
+                  Navigator.pushNamed(context, BreathingExcercises.id);
                 }, text:'تدريبات التنفس ', img: 'assets/images/breathing_excer.jpg'),
 
                 SizedBox(height: SizeConfig.defaultSize *1,)

@@ -9,14 +9,14 @@ import 'package:flutter_tts/flutter_tts.dart';
 import '../../../service/responsive.dart';
 
 class FaresReUseableScreen extends StatefulWidget {
-   FaresReUseableScreen(
+   const FaresReUseableScreen(
       {Key? key,
       required this.title,
       this.titleImagePath,
       required this.listOfRichTextWidget})
       : super(key: key);
   final String title;
- String? titleImagePath;
+ final String? titleImagePath;
   final List<MapEntry<Domain, SubDomain>> listOfRichTextWidget;
 
   @override

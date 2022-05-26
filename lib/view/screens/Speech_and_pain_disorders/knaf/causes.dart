@@ -60,7 +60,7 @@ class _ReUseableScreenState extends State<CausesOfKnaf> {
         title: Text(widget.title),
       )
           : AppBar(
-        iconTheme: IconThemeData(color: Colors.black),
+        iconTheme: const IconThemeData(color: Colors.black),
         backgroundColor: Colors.white,
         elevation: 0.0,
       ),
@@ -81,7 +81,7 @@ class _ReUseableScreenState extends State<CausesOfKnaf> {
                   height: SizeConfig.defaultSize * 4,
                 ),
                 ListView.builder(
-                  physics: NeverScrollableScrollPhysics(),
+                  physics: const NeverScrollableScrollPhysics(),
                   shrinkWrap: true,
                   itemCount: widget.listOfRichTextWidget.length,
                   itemBuilder: (context, index) {

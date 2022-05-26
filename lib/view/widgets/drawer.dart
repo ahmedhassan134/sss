@@ -39,9 +39,16 @@ class DrawerWidget extends StatelessWidget {
                     height: SizeConfig.defaultSize * 5,
                   ),
                   CircleAvatar(
-                    radius: SizeConfig.defaultSize * 6,
-                    backgroundImage: const AssetImage(
-                        'assets/images/background.jpg'), // Image radius
+                    radius: SizeConfig.defaultSize * 7  ,
+                    backgroundImage:  const AssetImage(
+
+
+                        'assets/images/app_iconn.jpg',
+
+
+                    ),
+
+                    // Image radius
                   ),
                   SizedBox(
                     height: SizeConfig.defaultSize * 1,
@@ -73,7 +80,7 @@ class DrawerWidget extends StatelessWidget {
                           return const AboutTheFaculty();
                         }));
                       },
-                      text: ' نبذة عن الكلية '),
+                      text: 'نبذة عن الكلية'),
                   CustomGesterDetectorDrawer(
                       iconData: Icons.people,
                       onTap: () {
@@ -82,17 +89,20 @@ class DrawerWidget extends StatelessWidget {
                           return const AmrAppPresenter();
                         }));
                       },
-                      text: 'مقدمي البرنامج '),
+                      text: 'مقدمي البرنامج'),
                   CustomGesterDetectorDrawer(
                       iconData: Icons.app_blocking,
                       onTap: () {
                         Navigator.pushNamed(context, AboutTheApp.id);
                       },
-                      text: ' نبذة عن التطبيق  '),
+                      text: 'نبذة عن التطبيق'),
                   Container(
                     margin: EdgeInsetsDirectional.only(
                         start: SizeConfig.defaultSize * .2,
                         end: SizeConfig.defaultSize * .6),
+                    padding: EdgeInsetsDirectional.only(
+                        start: SizeConfig.defaultSize * 1.3,
+                        end: SizeConfig.defaultSize * 3.3),
                     child: Container(
                       margin: EdgeInsetsDirectional.only(end: SizeConfig.defaultSize * 3),
                       child: Row(
@@ -139,13 +149,13 @@ class DrawerWidget extends StatelessWidget {
                                   throw 'Could not launch $url';
                                 }
                               },
-                              child: Text('غرفة التواصل ',
+                              child: Text('غرفة التواصل',
                                   style: TextStyle(
                                       fontSize: SizeConfig.defaultSize * 2,
                                       color: Colors.black,
                                       fontWeight: FontWeight.w900)),
                             ),
-                            flex: 3,
+                            flex: 4,
                           )
                         ],
                       ),
@@ -154,7 +164,7 @@ class DrawerWidget extends StatelessWidget {
                   CustomGesterDetectorDrawer(
                       iconData: Icons.share,
                       onTap: () {},
-                      text: ' لينك المشاركه  '),
+                      text: 'لينك المشاركه'),
                   CustomGesterDetectorDrawer(
                       iconData: Icons.app_blocking,
                       onTap: () {
@@ -163,11 +173,11 @@ class DrawerWidget extends StatelessWidget {
                           return const SourcesAndReferences1();
                         }));
                       },
-                      text: '  المصادر والمراجع '),
+                      text: 'المصادر والمراجع'),
                   CustomGesterDetectorDrawer(
                       iconData: Icons.app_blocking,
                       onTap: () {},
-                      text: ' التقييم  '),
+                      text: 'التقييم'),
                 ],
               ),
             ),

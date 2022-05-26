@@ -25,9 +25,18 @@ import 'package:fares_pro/view/screens/speech_and_breathing_organ_exercises/spee
 import 'package:fares_pro/view/screens/speech_and_breathing_organ_exercises/speeking_excersice.dart';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 void main() {
-  runApp(const MyApp());
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations(
+      [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]).then(
+    (_) {
+      runApp(
+        const MyApp(),
+      );
+    },
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -36,6 +45,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+
       theme: ThemeData(
           appBarTheme: const AppBarTheme(
               centerTitle: true,
@@ -54,40 +64,16 @@ class MyApp extends StatelessWidget {
             const SpeechAndBreathingOrganExercises(),
         LanguageDisorders.id: (context) => const LanguageDisorders(),
         CommonQuestions.id: (context) => const CommonQuestions(),
-       // Speeking.id: (context) => const Speeking(),
-       // Sound.id: (context) => const Sound(),
-      //  LanguageAcquisition.id: (context) => const LanguageAcquisition(),
-      //  ReasonsForDelayedLanguageGrowth.id: (context) =>
-          //  const ReasonsForDelayedLanguageGrowth(),
         HiringTesting.id: (context) => HiringTesting(),
         LanguageTesting.id: (context) => LanguageTesting(),
-        ShapeOfSpeeche.id:(context)=>ShapeOfSpeeche(),
-        //DiagnosisOfDelayedLanguageGrowth.id: (context) =>
-       //     const DiagnosisOfDelayedLanguageGrowth(),
-       // DesignAPlanToAddressDelayedLanguageGrowth.id: (context) =>
-           // const DesignAPlanToAddressDelayedLanguageGrowth(),
-        BreathingExcercise.id: (context) => const BreathingExcercise(),
+        ShapeOfSpeeche.id: (context) => ShapeOfSpeeche(),
+        BreathingExcercises.id: (context) => const BreathingExcercises(),
         SpeekingExcercise.id: (context) => const SpeekingExcercise(),
         CommonPerson.id: (context) => const CommonPerson(),
         Advice.id: (context) => Advice(),
         CenterLanguageInDisorders.id: (context) =>
             const CenterLanguageInDisorders(),
-        //MechanicSpeeking.id: (context) => const MechanicSpeeking(),
-      //  MechaniqueProduct.id: (context) => const MechaniqueProduct(title: '',),
         ElaeeHomeScreen.id: (context) => const ElaeeHomeScreen(),
-       // AssementOfBlindess.id: (context) => const AssementOfBlindess(),
-       // CausesOfBlindess.id: (context) => const CausesOfBlindess(),
-       // IntroductionOfBlindess.id: (context) => const IntroductionOfBlindess(),
-       // ProblemWithBlindess.id: (context) => const ProblemWithBlindess(),
-       // RehabilitionBlindess.id: (context) => const RehabilitionBlindess(),
-       // TestOfBlindess.id: (context) => const TestOfBlindess(),
-      //  TypesOfBlindess.id: (context) => const TypesOfBlindess(),
-       // CausesOfAbraxia.id: (context) => const CausesOfAbraxia(),
-       // IntroductionOfAbraxia.id: (context) => const IntroductionOfAbraxia(),
-       // InterventionMethodOfAbraxia.id: (context) =>
-          //  const InterventionMethodOfAbraxia(),
-      //  SymptomsOfAbraxia.id: (context) => const SymptomsOfAbraxia(),
-      //  TreatmentOfAbraxia.id: (context) => const TreatmentOfAbraxia(),
         HomeOfAbraxia.id: (context) => const HomeOfAbraxia()
       },
     );

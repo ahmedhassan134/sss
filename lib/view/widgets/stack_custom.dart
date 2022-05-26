@@ -3,15 +3,15 @@ import 'package:flutter/material.dart';
 
 import '../../service/responsive.dart';
 class StackCustom extends StatelessWidget {
-  StackCustom ({Key? key, required this.onPressed,required this.onTap,required this.text,required this.img,this.s1,this.s2,this.clr}) : super(key: key);
+  const StackCustom ({Key? key, required this.onPressed,required this.onTap,required this.text,required this.img,this.s1,this.s2,this.clr}) : super(key: key);
 
-  Function()? onTap;
-  String ? img;
-  String ? text;
-  double ? s1;
-  double ? s2;
-  Color ?clr;
-  Function()? onPressed;
+  final Function()? onTap;
+  final String ? img;
+  final String ? text;
+  final double ? s1;
+  final double ? s2;
+  final Color ?clr;
+  final Function()? onPressed;
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);

@@ -37,9 +37,9 @@ class SoundDisturbances extends StatelessWidget {
                   onTap: () {
                     Navigator.push(context, MaterialPageRoute(
                       builder: (context) {
-                        return ReUseableScreen(
+                        return const ReUseableScreen(
                             title: 'تعريف الصوت ',
-                            listOfRichTextWidget: const [
+                            listOfRichTextWidget: [
                               MapEntry(
                                 '',
                                 'هو ما يصدر عن الحنجرة نتيجة اندفاع الهواء المضغوط أسفل الثنايا الصوتية مما يجعلها تنفرج فجاه وهو موجود لدى الانسان والحيوان وهو الموجه الحاملة للاتصالات اللفظية وهو ينتج عن اهتزاز الثنايا الصوتية بالحنجرة ويتم هذا اثناء خروج هواء الزفير وهو ما نطلق عليه الصوت الحنجري الأولي وتعتمد سلامته على التركيب السليم للحنجرة. '
@@ -55,9 +55,9 @@ class SoundDisturbances extends StatelessWidget {
                   onTap: () {
                     Navigator.push(context, MaterialPageRoute(
                       builder: (context) {
-                        return ReUseableScreen(
+                        return const ReUseableScreen(
                           title: ' متطلبات اخراج الصوت الجيد',
-                          listOfRichTextWidget: const [
+                          listOfRichTextWidget: [
                             MapEntry(
                               "",
                ''' لكي يتم اصدار صوت سليم نحتاج لتواجد عده متطلبات وإذا غاب أحدها اختل الصوت وهي:                   
@@ -77,7 +77,7 @@ class SoundDisturbances extends StatelessWidget {
                   onTap: () {
                     Navigator.push(context, MaterialPageRoute(
                       builder: (context) {
-                        return ReUseableScreen(listOfRichTextWidget: const [
+                        return const ReUseableScreen(listOfRichTextWidget: [
                           MapEntry(
                             '',
                  ''' من الناحية الفسيولوجية الوظيفية تعتبر الحنجرة هي المسؤولة عن اصدار الصوت بالإضافة الى وظائف الحنجرة الاخرى لأنها جزء من الجهاز التنفسي العلوي وهي الحارس الامين الذي يحمينا من دخول الاجسام الغريبة الى الجهاز التنفسي وما يمكن ان يؤدي الى حدوث اختناق فهي خط حمايه هام واثناء البلع تغلق الحنجرة تماما بواسطه الثنايا الصوتية فتمنع دخول الطعام او الشراب الى جهاز التنفسي وهذه وظيفه حمايه هامه كما  ان الحنجرة مسؤوله عن زياده ضغط الهواء بداخل القفص الصدري وذلك هام جدا الامور كثيرا منها الولادة ومن هنا يتضح لنا ان الحنجرة هي  جزء هام وحساس لذلك لابد ان تعلم كيفيه الحفاظ عليها
@@ -99,8 +99,8 @@ class SoundDisturbances extends StatelessWidget {
                   onTap: () {
                     Navigator.push(context, MaterialPageRoute(
                       builder: (context) {
-                        return ReUseableScreen(listOfRichTextWidget: [
-                          const MapEntry(
+                        return const ReUseableScreen(listOfRichTextWidget: [
+                          MapEntry(
                             "",
                 '''عندما تصاب الحنجرة لاي سبب من الاسباب نجد المريض يعاني من:                
 1)	صعوبة في التنفس قد تصل الى حد الاختناق.       
@@ -118,7 +118,7 @@ class SoundDisturbances extends StatelessWidget {
                   onTap: () {
                     Navigator.push(context, MaterialPageRoute(
                       builder: (context) {
-                        return ReUseableScreen(listOfRichTextWidget: [
+                        return const ReUseableScreen(listOfRichTextWidget: [
                           MapEntry(
                             '',
                '''     وهي التي تنتج عن اصابات الحنجرة:     
@@ -142,7 +142,7 @@ class SoundDisturbances extends StatelessWidget {
                   onTap: () {
                     Navigator.push(context, MaterialPageRoute(
                       builder: (context) {
-                        return ReUseableScreen(listOfRichTextWidget: [
+                        return const ReUseableScreen(listOfRichTextWidget: [
                           MapEntry(
                             '',
              '''1)	حبيبات صوتيه.      
@@ -164,7 +164,7 @@ class SoundDisturbances extends StatelessWidget {
                   onTap: () {
                     Navigator.push(context, MaterialPageRoute(
                       builder: (context) {
-                        return ReUseableScreen(title: ' الاستئصال الحنجري',
+                        return const ReUseableScreen(title: ' الاستئصال الحنجري',
                             // ignore: prefer_const_literals_to_create_immutables
                             listOfRichTextWidget: [
                               MapEntry(
@@ -247,7 +247,7 @@ class SoundDisturbances extends StatelessWidget {
                         //       document:
                         //           PdfDocument.openAsset('assets/pdfs/book.pdf'),
                         //     ));
-                        return ReUseableScreen(
+                        return const ReUseableScreen(
                             title: 'البحة الصوتية',
                             listOfRichTextWidget: [
                               MapEntry('', '''هي تغير في طبقة الصوت الخام أو الأصلي المعتاد لمدة لا تزيد عن أسبوعين 14 يوم، وحينئذ يتم الذهاب لطبيب الأنف والأذن والحنجرة الذي يقوم بعمل الفحوصات اللازمة، لنتعرف على الأسباب التي يمكن أن تكون عضوية أو وظيفية كما ذكرنا:
@@ -301,7 +301,7 @@ class SoundDisturbances extends StatelessWidget {
                         //       document:
                         //           PdfDocument.openAsset('assets/pdfs/book.pdf'),
                         //     ));
-                        return ReUseableScreen(
+                        return const ReUseableScreen(
                             title: 'الطفرة غير مكتملة النمو',
                             listOfRichTextWidget: [
                               MapEntry('', ''' هو عدم قدرة الفرد على التغير أو الانتقال من الطبقات العليا إلى المنخفضة عند سن البلوغ ويحدث للذكور فقط فينتاب المراهق الشعور بعدم التكيف في صوته وإذا لم يحصل تكيف مع هذا التغير فإنه يحتفظ بصوت صبياني وحاد.                         
@@ -344,7 +344,7 @@ class SoundDisturbances extends StatelessWidget {
                         //       document:
                         //           PdfDocument.openAsset('assets/pdfs/book.pdf'),
                         //     ));
-                        return ReUseableScreen(
+                        return const ReUseableScreen(
                             title: 'فقدان الصوت الهستيرى',
                             listOfRichTextWidget: [
                               MapEntry('', '''فقدان مفاجئ مؤقت للصوت ويحدث بدون سبب عضوي حيث يفقد المريض الصوت تماماً لفترة معينة ويكون
@@ -384,7 +384,7 @@ class SoundDisturbances extends StatelessWidget {
                         //       document:
                         //           PdfDocument.openAsset('assets/pdfs/book.pdf'),
                         //     ));
-                        return ReUseableScreen(
+                        return const ReUseableScreen(
                             title: 'إرشادات خاصة بالصوت',
                             listOfRichTextWidget: [
                               MapEntry('', '''•	كيفية تشخيص أمراض الصوت

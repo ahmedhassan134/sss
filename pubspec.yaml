@@ -27,6 +27,7 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  device_preview:
   cupertino_icons: ^1.0.2
   flutter:
     sdk: flutter
@@ -37,11 +38,20 @@ dependencies:
   pdfx: ^2.0.1+2
   syncfusion_flutter_pdf: ^20.1.55-beta
   url_launcher: ^6.1.2
+  rename: ^2.0.1
+
+
 
 dev_dependencies:
-  flutter_lints: ^1.0.0
   flutter_test:
     sdk: flutter
+  flutter_launcher_icons: ^0.9.2
+  flutter_lints: ^1.0.0
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/images/app_iconn.jpg"
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

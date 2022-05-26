@@ -1,7 +1,7 @@
 import 'package:fares_pro/models/app_presenter.dart';
 import 'package:fares_pro/service/responsive.dart';
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
+
 
 class AmrAppPresenter extends StatelessWidget {
   const AmrAppPresenter({Key? key}) : super(key: key);
@@ -164,8 +164,8 @@ class AppPresenterItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.all(5),
-      padding: EdgeInsets.only(top: 5),
+      margin: const EdgeInsets.all(5),
+      padding: const EdgeInsets.only(top: 5),
       decoration: BoxDecoration(
           border: Border.all(width: 1, color: Colors.purple),
           borderRadius: BorderRadius.circular(15)),

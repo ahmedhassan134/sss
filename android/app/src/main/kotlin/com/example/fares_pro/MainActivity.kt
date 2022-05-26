@@ -1,4 +1,4 @@
-package com.example.fares_pro
+package hany.fares.dalelk
 
 import io.flutter.embedding.android.FlutterActivity
 

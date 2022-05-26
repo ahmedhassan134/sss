@@ -82,7 +82,7 @@ class _ReUseableScreenState extends State<IntroOfVerbal> {
                   height: SizeConfig.defaultSize * 4,
                 ),
                 ListView.builder(
-                  physics: NeverScrollableScrollPhysics(),
+                  physics: const NeverScrollableScrollPhysics(),
                   shrinkWrap: true,
                   itemCount: widget.listOfRichTextWidget.length,
                   itemBuilder: (context, index) {
